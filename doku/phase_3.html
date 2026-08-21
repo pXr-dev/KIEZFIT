@@ -1,0 +1,280 @@
+<!-- Phase 3 – Visuelles Design & UX -->
+
+<!-- Ablaufplan --> 
+    ca. 8–12 Stunden reine Arbeitszeit (3-5 Tage)
+
+<!--########################################-->    
+<!--# 3.1 Bestandsaufnahme & Design-Freeze #-->  
+<!--########################################-->   
+        
+            <!-- 1. Technischer Stand -->
+                KIEZFIT/
+                │
+                ├── index.html
+                │
+                ├── css/
+                    │   ├── base.css
+                    │   ├── layout.css
+                    │   ├── components.css
+                    │   ├── sections.css
+                    │   └── responsive.css
+                    │
+                    ├── js/
+                    │   └── script.js
+                    │
+                    └── ...
+
+            <!-- 2. Farbpalette – Design-Freeze -->
+                | Variable            | Wert      | Verwendung                 |
+                | ------------------- | --------- | -------------------------- |
+                | `--color-carbon`    | `#1A1A1A` | Haupt-Hintergrund          |
+                | `--color-off-white` | `#F4F5F7` | Haupttext                  |
+                | `--color-lime`      | `#E2F100` | Akzent / CTA               |
+                | `--color-graphite`  | `#2D2D2D` | Karten / sekundäre Flächen |
+                | `--color-white`     | `#FFFFFF` | Weiß                       |
+                | `--color-border`    | `#3A3A3A` | Rahmen                     |
+
+            <!-- 3. Bereits fertige Interaktionen -->
+                > Navigation
+                    Desktop-Navigation
+                    Mobile Navigation
+                    Hamburger-Menü
+                    Hamburger → X Animation
+                    aria-expanded
+                    Schließen nach Klick auf einen Navigationslink
+                > Scroll-System
+                    Scroll nach oben
+                    Scroll nach unten
+                    Abschnittsweises Scrollen
+                    Smooth Scrolling
+                    Button-Status
+                    Disabled-Zustände
+                > Interaktion
+                    Hover
+                    Active
+                    Focus-visible
+                    Button-Transitions
+                    Card-Hover
+                    Hamburger-Animation
+                --> Funktionen werden in 3.6 Interaktionen & Animationen
+                    auf Optimierungspotenzial geprüft
+            
+            <!-- 4. Bestehende visuelle Komponenten UI-System -->
+                > Header
+                    Logo, Navigation, Login, Hamburger
+                > Hero
+                    Subtitle, H1, Beschreibung, Primary CTA, Secondary CTA
+                > Leistungen
+                    Grid, Leistungskarten, Icons, Hover
+                > Kurse
+                    Kurskarten, Kursinformationen, Kursbutton, Hover
+                > Mitgliedschaften
+                    Pricing Cards, Featured Card, Badge, Feature-Liste, CTA
+                > Kontakt
+                    Kontaktkarten, Icons, Informationen
+                > Footer
+                    Branding, Linkbereiche, rechtliche Links, Footer Bottom
+                > Scroll Button
+                    Up, Down, Hover, Active, Disabled, Focus
+            
+            <!--5. Überprüfung -->
+                > Optik
+                    Bilder, visuelle Gewichtung, Branding, Typografie, Kontraste
+                > Layout
+                    Section-Abstände, Card-Abstände, Grid-Gaps, Content-Breiten, Header/Footer-Abstände
+                > UX
+                    Hover, Active, Focus, Animationen, Navigation, Scroll-Verhalten
+                > Responsive
+
+            <!-- 6. Design-Freeze – Status -->
+                | Punkt                     | Status         |
+                | ------------------------- | -------------- |
+                | CSS-Struktur              | check          |
+                | JS-Struktur               | check          |
+                | Farbpalette               | 🔒 eingefroren |
+                | Komponenten               | check          |
+                | Navigation                | check          |
+                | Hamburger                 | check          |
+                | Scroll-System             | check          |
+                | Responsive-Grundstruktur  | check          |
+                | Interaktionen             | check          |
+                | Änderungsumfang definiert | check          |
+
+<!--########################################-->    
+<!--# 3.2 Bilder & visuelle Inhalte        #-->     
+<!--########################################-->            
+    Hero hintergrund festgelegt und in css eingefügt
+    Section Leistungen hintergrund festgelegt und in css eingefügt
+
+
+Überlegung welche Bereiche Bilder benötigen
+            Bilder auswählen
+            passende Größen bestimmen
+            `object-fit`
+            Seitenverhältnisse
+            Bildpositionierung
+            responsive Verhalten
+            Ladezeiten berücksichtigen
+
+<!--########################################-->    
+<!--# Section Studio                       #-->     14:50 - 16:06 Uhr    
+<!--########################################-->     76 Min
+    Aufbau:
+        > Schritt 1
+            HTML-Struktur für die neue Studio-Landkarte.
+        > Schritt 2
+            Desktop-Layout.
+        > Schritt 3
+            Typografie und Abstände an unser bestehendes Design anpassen.
+        > Schritt 4
+            Responsive Variante.
+        > Schritt 5
+            Die vier Bereiche visuell gestalten.
+        > Schritt 6
+            Hover/Active-Interaktion
+
+
+
+    3.3 Logo & Branding                                     |
+        ca. 45–60 Minuten
+        Überprüfung KIEZFIT-Logo
+            Größe
+            Position
+            Typografie
+            `KIEZFIT`
+            ®/Subscript-Darstellung
+            Abstand zum Header
+            mobile Darstellung
+            Footer-Darstellung
+        Entscheidung Textlogo oder grafisches Logo 
+
+    3.4 Typografie & visuelle Hierarchie                    |
+        ca. 1–1,5 Stunden**
+        Überprüfung
+            H1
+            H2
+            H3
+            Fließtext
+            Buttons
+            Navigation
+            kleine Labels
+            Abstände
+            Font
+
+    3.5 Abstände & Layout-Feinschliff                       |
+        ca. 1–1,5 Stunden**
+        UI-Feinschliff
+            Section-Abstände
+            Card-Padding
+            Grid-Gaps
+            Button-Abstände
+            Header-Abstände
+            Footer-Abstände
+            maximale Content-Breiten
+        -> Vermeidung von „Magic Numbers“
+
+    3.6 Interaktionen & Animationen                         |
+        ca. 1–1,5 Stunden**
+        Bereits vorhanden:
+            Hover
+            Active
+            Focus
+            Hamburger Animation
+            Mobile Navigation
+            Smooth Scrolling
+        Mögliche Erweiterungen:
+            Card Hover
+            Button Hover
+            subtilere Transitions
+            Navigation
+            Bild-Transitions
+            eventuell Scroll-Reveal
+
+    3.7 Responsive Visual Polish                            |
+        ca. 1–1,5 Stunden**
+        testen auf:
+            1920px, 1440px, 1200px, 1024px,
+            900px, 768px, 700px, 600px, 480px,
+            375px, 320px
+        besondere Beachtung:
+            Bilder
+            Textumbrüche
+            Buttons
+            Karten
+            Navigation
+            Header
+            Footer
+            horizontales Überlaufen
+
+    3.8 Performance & technische Bereinigung                |
+        ca. 45–60 Minuten**
+        Abschluss:
+            unnötiges CSS suchen
+            doppelte Regeln suchen
+            unnötige Übergänge entfernen
+            Bildgrößen prüfen
+            Dateistruktur prüfen
+            Browser-Konsole prüfen
+            HTML/CSS/JS auf offensichtliche Fehler prüfen
+        Testing:
+            über einen lokalen HTTP-Server, statt nur über `file://`
+
+    3.9 Abschlussprüfung                                    |
+        ca. 30–45 Minuten**
+        Quality Gate
+            Funktion
+                [ ] Navigation
+                [ ] Hamburger
+                [ ] Scroll-Buttons
+                [ ] Buttons
+                [ ] Links
+                [ ] Login
+                [ ] Mobile Navigation
+            Design
+                [ ] Farben
+                [ ] Typografie
+                [ ] Abstände
+                [ ] Karten
+                [ ] Bilder
+                [ ] Logo
+                [ ] Footer
+            Responsive
+                [ ] Desktop
+                [ ] Tablet
+                [ ] Mobile
+                [ ] kleine Smartphones
+            Technik
+                [ ] Console sauber
+                [ ] kein horizontaler Overflow
+                [ ] CSS sauber aufgeteilt
+                [ ] JS sauber
+                [ ] keine offensichtlichen Duplikate
+
+<!-- Gesamtzeit -->
+
+| Abschnitt              |           Zeit | reale Zeit  |
+| ---------------------- | -------------: | ---------:  |
+| 3.1 Bestandsaufnahme   |          30 Min|  27 Min     |
+| 3.2 Bilder             |         150 Min| 105 Min     | + UI - Section Studio 
+| 3.3 Branding           |          1,0 h |             |
+| 3.4 Typografie         |          1,0 h |             |
+| 3.5 Layout-Feinschliff |          1,5 h |             |
+| 3.6 Interaktionen      |          1,5 h |             |
+| 3.7 Responsive         |          1,0 h |             |
+| 3.8 Performance        |          1,0 h |             |
+| 3.9 Abschlussprüfung   |          0,5 h |             |
+| **Gesamt**             |         10,5 h |             |
+
+<!-- Realistischer Zeitplan -->
+
+1. Optik
+> Bestandsaufnahme → Bilder → Branding
+
+2. Design
+> Typografie → Abstände → Layout
+
+3. UX
+> Interaktionen → Animationen → Responsive Polish
+
+4 Qualität
+> Performance → Bereinigung → kompletter Qualitätstest → Phase-3-Abschluss

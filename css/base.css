@@ -1,0 +1,36 @@
+/* ==================================================
+   RESET & GLOBALE EINSTELLUNGEN
+   ================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+:root {
+    --color-carbon: #1A1A1A;
+    --color-off-white: #F4F5F7;
+    --color-lime: #E2F100;
+    --color-graphite: #2D2D2D;
+
+    --color-white: #FFFFFF;
+    --color-border: #3A3A3A;
+}
+
+body {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background-color: var(--color-carbon);
+    color: var(--color-off-white);
+}

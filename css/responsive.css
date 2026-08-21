@@ -1,0 +1,312 @@
+/* ==================================================
+   RESPONSIVE – TABLET
+   ================================================== */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 20px 25px;
+
+        gap: 20px;
+    }
+
+    .logo {
+        flex-shrink: 0;
+    }
+
+    nav {
+        display: flex;
+
+        flex: 1;
+
+        justify-content: center;
+
+        gap: 12px;
+
+        min-width: 0;
+    }
+
+    nav a {
+        font-size: 14px;
+
+        white-space: nowrap;
+    }
+
+    .header-actions {
+        flex-shrink: 0;
+    }
+
+    .login-button {
+        padding: 9px 14px;
+
+        font-size: 14px;
+
+        white-space: nowrap;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .studio,
+    .leistungen,
+    .kurse,
+    .mitgliedschaften,
+    .kontakt {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .leistungen-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .kurse-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 700px;
+    }
+
+    .mitgliedschaften-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 500px;
+    }
+
+    .kontakt-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+
+/* ==================================================
+   RESPONSIVE – MOBILE HEADER
+   ================================================== */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 20px 25px;
+
+        justify-content: space-between;
+        align-items: center;
+
+        flex-wrap: nowrap;
+
+        gap: 15px;
+    }
+
+
+    /* MOBILE NAVIGATION */
+
+    nav {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+        flex-wrap: wrap;
+
+        gap: 20px;
+
+        padding: 15px 20px;
+
+        background-color: var(--color-carbon);
+
+        border-bottom: 1px solid var(--color-graphite);
+
+        z-index: 999;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.2s ease,
+            transform 0.2s ease,
+            visibility 0.2s ease;
+    }
+
+
+    /* NAVIGATION GEÖFFNET */
+
+    nav.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+
+    /* NAVIGATIONS-LINKS */
+
+    nav a {
+        opacity: 0;
+        transform: translateY(-5px);
+
+        transition:
+            opacity 0.2s ease,
+            transform 0.2s ease;
+    }
+
+
+    nav.active a {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+
+    /* VERZÖGERUNG DER LINKS */
+
+    nav.active a:nth-child(1) {
+        transition-delay: 0.05s;
+    }
+
+    nav.active a:nth-child(2) {
+        transition-delay: 0.10s;
+    }
+
+    nav.active a:nth-child(3) {
+        transition-delay: 0.15s;
+    }
+
+    nav.active a:nth-child(4) {
+        transition-delay: 0.20s;
+    }
+
+    nav.active a:nth-child(5) {
+        transition-delay: 0.25s;
+    }
+
+    nav.active a:nth-child(6) {
+        transition-delay: 0.30s;
+    }
+
+
+    /* HEADER ACTIONS */
+
+    .header-actions {
+        display: flex;
+        flex-shrink: 0;
+    }
+
+
+    /* HAMBURGER */
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* ==================================================
+   RESPONSIVE – KLEINE MOBILE GERÄTE
+   ================================================== */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 20px;
+
+        gap: 10px;
+    }
+
+    .hero {
+        min-height: 500px;
+
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-text {
+        font-size: 17px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .primary-button,
+    .secondary-button {
+        text-align: center;
+    }
+
+    .studio,
+    .leistungen,
+    .kurse,
+    .mitgliedschaften,
+    .kontakt {
+        padding: 70px 20px;
+    }
+
+    .section-content h2,
+    .section-header h2 {
+        font-size: 32px;
+    }
+
+    .leistungen-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kurse-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kurs-card {
+        flex-direction: column;
+    }
+
+    .kurs-button {
+        align-self: stretch;
+
+        text-align: center;
+    }
+
+    .kontakt-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        gap: 20px;
+
+        text-align: center;
+    }
+
+    .footer-legal {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .scroll-button {
+        right: 10px;
+    }
+
+    .scroll-button button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .scroll-button button::before {
+        font-size: 18px;
+    }
+}

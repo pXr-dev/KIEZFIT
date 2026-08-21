@@ -1,0 +1,817 @@
+============================================================
+KIEZFIT – PROJEKTDOKUMENTATION
+PHASE 1 & PHASE 2
+============================================================
+
+
+PROJEKT
+------------------------------------------------------------
+
+Projektname:
+KIEZFIT
+
+Projektart:
+Responsive Fitnessstudio-Landingpage
+
+Technologien:
+- HTML5
+- CSS3
+- JavaScript
+
+Entwicklungsumgebung:
+- Visual Studio Code
+- Browser Developer Tools
+
+Projektziel:
+Entwicklung einer modernen, responsiven Landingpage
+für ein fiktives Fitnessstudio namens KIEZFIT.
+
+Die Landingpage dient als öffentliche Einstiegsseite.
+Nach einem späteren Login soll der Benutzer auf
+Mitgliederbereiche bzw. weitere Seiten zugreifen können.
+
+
+============================================================
+PHASE 1 – HTML & CSS / GRUNDSTRUKTUR
+============================================================
+
+
+1. PROJEKTGRUNDLAGE
+------------------------------------------------------------
+
+Zu Beginn wurde die grundlegende Struktur des
+KIEZFIT-Projekts aufgebaut.
+
+Die Landingpage wurde zunächst als statische Website
+entwickelt.
+
+Grundstruktur:
+
+- Header
+- Hero-Bereich
+- Studio
+- Leistungen
+- Kurse
+- Mitgliedschaften
+- Kontakt
+- Footer
+
+
+------------------------------------------------------------
+2. HTML-GRUNDSTRUKTUR
+------------------------------------------------------------
+
+Die HTML-Struktur wurde semantisch aufgebaut.
+
+Verwendete Bereiche:
+
+<header>
+<nav>
+<main>
+<section>
+<footer>
+
+Die Navigation enthält:
+
+- Start
+- Studio
+- Leistungen
+- Kurse
+- Mitgliedschaften
+- Kontakt
+
+Zusätzlich wurde im Header ein Login-Bereich integriert.
+
+
+------------------------------------------------------------
+3. HERO-BEREICH
+------------------------------------------------------------
+
+Der Hero-Bereich bildet den visuellen Einstieg
+in die Website.
+
+Inhalte:
+
+KIEZFIT – DEIN FITNESSSTUDIO
+
+"Stärker werden. Gemeinsam wachsen."
+
+Zusätzlich wurden ein Beschreibungstext sowie
+Call-to-Action-Buttons integriert.
+
+
+------------------------------------------------------------
+4. STUDIO-BEREICH
+------------------------------------------------------------
+
+Der Studio-Bereich wurde als Informationsbereich
+über KIEZFIT umgesetzt.
+
+Ziel:
+Darstellung des Studios und seiner Philosophie.
+
+
+------------------------------------------------------------
+5. LEISTUNGEN
+------------------------------------------------------------
+
+Die Leistungen wurden in Karten dargestellt.
+
+Enthalten sind:
+
+- Krafttraining
+- Cardio
+- Fitnesskurse
+- Personal Training
+- Ernährungsberatung
+- Fortschrittsanalyse
+
+Die Karten wurden als Grid umgesetzt.
+
+
+------------------------------------------------------------
+6. KURSE
+------------------------------------------------------------
+
+Für die Kursübersicht wurden Kurskarten erstellt.
+
+Beispielkurse:
+
+- Yoga
+- HIIT
+- Spinning
+- Functional Training
+
+Die Karten enthalten Informationen zum Kurs
+und einen entsprechenden Button.
+
+
+------------------------------------------------------------
+7. MITGLIEDSCHAFTEN
+------------------------------------------------------------
+
+Es wurden drei Mitgliedschaftsmodelle umgesetzt:
+
+Basic
+29,99 € / Monat
+
+Premium
+39,99 € / Monat
+
+Professional
+59,99 € / Monat
+
+Premium wurde als hervorgehobene Mitgliedschaft
+mit dem Badge "BELIEBT" dargestellt.
+
+
+------------------------------------------------------------
+8. KONTAKT
+------------------------------------------------------------
+
+Der Kontaktbereich wurde in mehrere Karten unterteilt.
+
+Enthalten sind unter anderem:
+
+- Adresse
+- Telefonnummer
+- E-Mail
+- Öffnungszeiten
+
+
+------------------------------------------------------------
+9. FOOTER
+------------------------------------------------------------
+
+Der Footer wurde mit mehreren Spalten aufgebaut.
+
+Enthalten sind:
+
+- Markenbereich
+- Navigation
+- Kontakt bzw. weitere Informationen
+- rechtliche Links
+
+Zusätzlich wurde ein unterer Footer-Bereich
+für Copyright und rechtliche Links umgesetzt.
+
+
+============================================================
+DESIGN-SYSTEM
+============================================================
+
+
+10. FARBPALETTE
+------------------------------------------------------------
+
+Das Projekt verwendet eine definierte Farbpalette.
+
+Primärfarbe:
+Carbon
+#1A1A1A
+
+Sekundärfarbe:
+Off-White
+#F4F5F7
+
+Akzentfarbe:
+Lime
+#E2F100
+
+Graphite:
+#2D2D2D
+
+Weiß:
+#FFFFFF
+
+Border:
+#3A3A3A
+
+
+Die Farben wurden als CSS Custom Properties
+in :root definiert.
+
+Beispiel:
+
+--color-carbon
+--color-off-white
+--color-lime
+--color-graphite
+--color-white
+--color-border
+
+
+------------------------------------------------------------
+11. GRUNDLEGENDE CSS-EINSTELLUNGEN
+------------------------------------------------------------
+
+Box-Sizing wurde global auf border-box gesetzt.
+
+Horizontaler Overflow wurde verhindert.
+
+Smooth Scrolling wurde über html aktiviert.
+
+Der Body verwendet:
+
+- Carbon als Hintergrund
+- Off-White als Standardtextfarbe
+- Arial als Standardschrift
+
+
+============================================================
+PHASE 1 – RESPONSIVE DESIGN
+============================================================
+
+
+12. DESKTOP
+------------------------------------------------------------
+
+Die Desktop-Version verwendet:
+
+- horizontale Navigation
+- dreispaltige Leistungsübersicht
+- zweispaltige Kursübersicht
+- dreispaltige Mitgliedschaften
+- vier Kontaktkarten
+- mehrspaltigen Footer
+
+
+------------------------------------------------------------
+13. TABLET – 900 PX
+------------------------------------------------------------
+
+Bei maximal 900px wurden Anpassungen vorgenommen.
+
+Header:
+- kleinere Abstände
+- kleinere Navigation
+- angepasste Login-Größe
+
+Leistungen:
+- 2 Spalten
+
+Kurse:
+- 1 Spalte
+- maximale Breite 700px
+
+Mitgliedschaften:
+- 1 Spalte
+- maximale Breite 500px
+
+Kontakt:
+- 2 Spalten
+
+Footer:
+- 3 Spalten
+
+
+------------------------------------------------------------
+14. MOBILE – 700 PX
+------------------------------------------------------------
+
+Bei maximal 700px wurde der mobile Header aktiviert.
+
+Der Header verwendet:
+
+- Logo
+- Hamburger-Menü
+- Login-Button
+
+Die Navigation wird aus dem normalen Layout
+herausgelöst und unterhalb des Headers angezeigt.
+
+
+------------------------------------------------------------
+15. KLEINE MOBILE GERÄTE – 600 PX
+------------------------------------------------------------
+
+Bei maximal 600px wurden weitere Anpassungen vorgenommen.
+
+Unter anderem:
+
+- kleinere Hero-Schrift
+- kleinere Abstände
+- vertikale CTA-Buttons
+- einspaltige Leistungsübersicht
+- einspaltige Kurse
+- vertikale Kurskarten
+- einspaltige Kontaktkarten
+- einspaltiger Footer
+- angepasster Scroll-Button
+
+
+============================================================
+PHASE 1 – CSS-REFACTORING
+============================================================
+
+
+16. AUFTEILUNG DER CSS-DATEIEN
+------------------------------------------------------------
+
+Die ursprünglich große CSS-Datei wurde refaktoriert.
+
+Aktuelle Struktur:
+
+css/
+│
+├── base.css
+├── layout.css
+├── components.css
+├── sections.css
+└── responsive.css
+
+
+------------------------------------------------------------
+17. BASE.CSS
+------------------------------------------------------------
+
+Enthält:
+
+- Reset
+- globale Einstellungen
+- CSS Variablen
+- Body-Grundlagen
+- box-sizing
+- overflow
+- smooth scrolling
+
+
+------------------------------------------------------------
+18. LAYOUT.CSS
+------------------------------------------------------------
+
+Enthält:
+
+- Header Layout
+- allgemeine Section-Bereiche
+- Footer Layout
+- Footer Grid
+- Footer Bottom
+
+
+------------------------------------------------------------
+19. COMPONENTS.CSS
+------------------------------------------------------------
+
+Enthält wiederverwendbare Komponenten:
+
+- Logo
+- Navigation
+- Login-Button
+- Primary Button
+- Secondary Button
+- Kurs Button
+- Membership Button
+- Hamburger
+- Scroll Button
+
+
+------------------------------------------------------------
+20. SECTIONS.CSS
+------------------------------------------------------------
+
+Enthält die spezifischen Inhalte der einzelnen
+Seitenbereiche:
+
+- Hero
+- Section Content
+- Section Header
+- Section Subtitle
+- Leistungen
+- Kurse
+- Mitgliedschaften
+- Kontakt
+- Footer Content
+
+
+------------------------------------------------------------
+21. RESPONSIVE.CSS
+------------------------------------------------------------
+
+Enthält ausschließlich responsive Anpassungen.
+
+Breakpoints:
+
+900px
+700px
+600px
+
+
+============================================================
+PHASE 2 – JAVASCRIPT & INTERAKTION
+============================================================
+
+
+22. JAVASCRIPT AUS HTML AUSGELAGERT
+------------------------------------------------------------
+
+Das JavaScript wurde aus dem HTML ausgelagert.
+
+Aktuelle Struktur:
+
+js/
+└── script.js
+
+
+Dadurch wurde die Trennung von:
+
+HTML
+CSS
+JavaScript
+
+verbessert.
+
+
+------------------------------------------------------------
+23. SCROLL-NAVIGATION
+------------------------------------------------------------
+
+Es wurde eine interaktive Scroll-Navigation entwickelt.
+
+Funktionen:
+
+- nach oben
+- nach unten
+- Navigation zwischen Sections
+- Navigation zum Footer
+
+
+Die Navigation erkennt anhand der aktuellen
+Scrollposition den aktuell sichtbaren Abschnitt.
+
+
+------------------------------------------------------------
+24. CURRENT SECTION
+------------------------------------------------------------
+
+Die Funktion:
+
+getCurrentSection()
+
+ermittelt anhand der Scrollposition,
+welcher Abschnitt aktuell aktiv ist.
+
+
+------------------------------------------------------------
+25. SMOOTH SCROLLING
+------------------------------------------------------------
+
+Die Scroll-Navigation verwendet:
+
+behavior: "smooth"
+
+Dadurch erfolgt die Bewegung zwischen
+den Bereichen animiert.
+
+
+------------------------------------------------------------
+26. SCROLL-BUTTON STATUS
+------------------------------------------------------------
+
+Die Scroll-Buttons werden abhängig von der
+aktuellen Position aktiviert bzw. deaktiviert.
+
+Am Anfang:
+
+Scroll-Up → disabled
+
+Am Ende:
+
+Scroll-Down → disabled
+
+
+Der Status wird über das Scroll-Event aktualisiert.
+
+
+------------------------------------------------------------
+27. HAMBURGER-MENÜ
+------------------------------------------------------------
+
+Für mobile Geräte wurde ein Hamburger-Menü
+implementiert.
+
+Funktionen:
+
+- Menü öffnen
+- Menü schließen
+- Hamburger wird zum X
+- Navigation erscheint unterhalb des Headers
+- Navigation verschwindet beim erneuten Klick
+- Navigation schließt beim Klick auf einen Link
+
+
+------------------------------------------------------------
+28. MOBILE NAVIGATION
+------------------------------------------------------------
+
+Die mobile Navigation verwendet:
+
+- opacity
+- visibility
+- transform
+- transition
+
+Dadurch erscheint das Menü mit einer
+sanften Animation.
+
+
+Zusätzlich erscheinen die einzelnen
+Navigationslinks leicht verzögert nacheinander.
+
+
+------------------------------------------------------------
+29. ACCESSIBILITY
+------------------------------------------------------------
+
+Das Hamburger-Menü verwendet:
+
+aria-expanded
+
+Beim Öffnen:
+
+aria-expanded="true"
+
+Beim Schließen:
+
+aria-expanded="false"
+
+
+Zusätzlich wurden sichtbare Fokuszustände
+für Tastaturnavigation umgesetzt.
+
+
+Verwendet wird:
+
+:focus-visible
+
+
+Die Fokusmarkierung verwendet die
+KIEZFIT-Akzentfarbe.
+
+
+------------------------------------------------------------
+30. BUTTON-INTERAKTION
+------------------------------------------------------------
+
+Buttons besitzen:
+
+- Hover-Zustände
+- Active-Zustände
+- Focus-Zustände
+- Disabled-Zustände
+
+Active-Zustände:
+
+transform: scale(0.97)
+
+
+------------------------------------------------------------
+31. HAMBURGER-INTERAKTION
+------------------------------------------------------------
+
+Das Hamburger-Symbol besteht aus drei
+horizontalen Linien.
+
+Beim Öffnen:
+
+- obere Linie → 45°
+- mittlere Linie → unsichtbar
+- untere Linie → -45°
+
+Dadurch entsteht ein X-Symbol.
+
+
+------------------------------------------------------------
+32. SCROLL-BUTTON INTERAKTION
+------------------------------------------------------------
+
+Die Scroll-Buttons besitzen:
+
+- Hover-Effekt
+- Active-Effekt
+- Disabled-Zustand
+- Focus-Zustand
+
+Die Pfeile werden über CSS erzeugt.
+
+
+============================================================
+PHASE 2 – TESTING
+============================================================
+
+
+33. FUNKTIONSTEST
+------------------------------------------------------------
+
+Getestet wurden:
+
+- Hamburger öffnen
+- Hamburger schließen
+- Navigation öffnen
+- Navigation schließen
+- Navigation über Links
+- Scroll nach oben
+- Scroll nach unten
+- Section-Wechsel
+- Footer-Navigation
+- Button Disabled State
+
+
+Ergebnis:
+
+FUNKTIONIERT
+
+
+------------------------------------------------------------
+34. RESPONSIVE TEST
+------------------------------------------------------------
+
+Getestet wurden verschiedene Bildschirmgrößen.
+
+Ergebnis:
+
+- Desktop → funktioniert
+- Tablet → funktioniert
+- Mobile → funktioniert
+- kleine Displays → funktioniert
+- Header → funktioniert
+- Hamburger → funktioniert
+- Mobile Navigation → funktioniert
+- Kurskarten → funktionieren
+- Leistungskarten → funktionieren
+- Scroll-Button → funktioniert
+
+
+============================================================
+AKTUELLER PROJEKTSTAND
+============================================================
+
+
+35. PHASE 1
+------------------------------------------------------------
+
+STATUS:
+
+ABGESCHLOSSEN
+
+
+HTML:
+✓ abgeschlossen
+
+CSS:
+✓ abgeschlossen
+
+Responsive Design:
+✓ abgeschlossen
+
+CSS-Refactoring:
+✓ abgeschlossen
+
+
+------------------------------------------------------------
+36. PHASE 2
+------------------------------------------------------------
+
+STATUS:
+
+ABGESCHLOSSEN
+
+
+JavaScript:
+✓ ausgelagert
+
+Scroll-Navigation:
+✓ abgeschlossen
+
+Scroll-Button:
+✓ abgeschlossen
+
+Hamburger:
+✓ abgeschlossen
+
+Mobile Navigation:
+✓ abgeschlossen
+
+Accessibility:
+✓ grundlegende Umsetzung abgeschlossen
+
+Interaktionen:
+✓ abgeschlossen
+
+Responsive Testing:
+✓ abgeschlossen
+
+Qualitätstest:
+✓ bestanden
+
+
+============================================================
+DATEISTRUKTUR
+============================================================
+
+
+37. AKTUELLE PROJEKTSTRUKTUR
+------------------------------------------------------------
+
+KIEZFIT/
+│
+├── index.html
+│
+├── css/
+│   ├── base.css
+│   ├── layout.css
+│   ├── components.css
+│   ├── sections.css
+│   └── responsive.css
+│
+├── js/
+│   └── script.js
+│
+└── weitere Projektdateien
+
+
+============================================================
+PHASE 2 – ABSCHLUSS
+============================================================
+
+
+PHASE 2 IST DAMIT ABGESCHLOSSEN.
+
+Die Website verfügt nun über:
+
+- saubere HTML-Struktur
+- modulare CSS-Struktur
+- responsive Layouts
+- JavaScript-Datei
+- funktionierende Scroll-Navigation
+- funktionierendes Hamburger-Menü
+- mobile Navigation
+- Button-Interaktionen
+- grundlegende Accessibility
+- getestete Responsive-Breakpoints
+
+Der aktuelle Stand stellt eine stabile Grundlage
+für die nächsten Entwicklungsphasen dar.
+
+
+============================================================
+NÄCHSTER ENTWICKLUNGSSCHRITT
+============================================================
+
+PHASE 3 – VISUELLES DESIGN & UX
+
+Geplante Inhalte:
+
+1. Bilder integrieren
+2. Icons optimieren
+3. Logo finalisieren
+4. visuelle Hierarchie verbessern
+5. Bildgrößen optimieren
+6. Hover- und Transition-Feinschliff
+7. Performance überprüfen
+8. abschließender visueller Qualitätstest
+
+
+============================================================
+ENDE PHASE 1 & PHASE 2
+============================================================

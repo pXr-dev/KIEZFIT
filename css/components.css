@@ -1,0 +1,381 @@
+/* ==================================================
+   LOGO
+   ================================================== */
+
+.logo a {
+    display: inline-flex;
+    align-items: flex-start;
+
+    color: var(--color-lime);
+    text-decoration: none;
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo a sub {
+    position: relative;
+    top: -0.1em;
+
+    margin-left: 2px;
+
+    font-size: 0.45em;
+    line-height: 1;
+
+    vertical-align: super;
+}
+
+/* ==================================================
+   NAVIGATION
+   ================================================== */
+
+nav {
+    display: flex;
+    gap: 25px;
+
+    flex-shrink: 1;
+}
+
+nav a {
+    color: var(--color-off-white);
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--color-lime);
+}  
+
+/* ==================================================
+   HEADER ACTIONS / LOGIN
+   ================================================== */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+.login-button {
+    display: inline-block;
+
+    padding: 9px 14px;
+
+    border-radius: 8px;
+
+    background-color: var(--color-lime);
+    color: var(--color-carbon);
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+}
+
+/* ==================================================
+   ALLGEMEINE BUTTONS (OPTIMIERT)
+   ================================================== */
+
+.primary-button {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    border-radius: 6px;
+
+    background-color: var(--color-lime);
+    color: var(--color-carbon);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    /* Semikolon durch Komma ersetzt */
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.primary-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.secondary-button {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    /* Rand sichtbar gemacht auf dunklem Grund */
+    border: 2px solid var(--color-off-white);
+    border-radius: 6px;
+
+    color: var(--color-off-white);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.secondary-button:hover {
+    border-color: var(--color-lime);
+    color: var(--color-lime);
+    background-color: rgba(226, 241, 0, 0.05); /* Zartes Aufleuchten bei Hover */
+}
+
+/* ==================================================
+   KURSE – BUTTON
+   ================================================== */
+
+.kurs-button {
+    align-self: center;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    background-color: var(--color-lime);
+    color: var(--color-carbon);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+/* ==================================================
+   MITGLIEDSCHAFTEN – BUTTON
+   ================================================== */
+
+.membership-button {
+    display: block;
+
+    margin-top: auto;
+    padding: 14px 20px;
+
+    border-radius: 8px;
+
+    background-color: var(--color-lime);
+    color: var(--color-carbon);
+
+    text-align: center;
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.membership-card:not(.membership-featured) .membership-button {
+    background-color: transparent;
+    color: var(--color-off-white);
+
+    border: 1px solid var(--color-off-white);
+}
+
+
+/* ==================================================
+   HAMBURGER
+   ================================================== */
+
+.hamburger {
+    display: none;
+
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 5px;
+
+    padding: 8px;
+
+    border: none;
+
+    background: none;
+
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+
+    width: 25px;
+    height: 2px;
+
+    background-color: var(--color-off-white);
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.hamburger:focus-visible {
+    outline: 2px solid var(--color-lime);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+/* ==================================================
+   SCROLL-BUTTON
+   ================================================== */
+
+.scroll-button {
+    position: fixed;
+
+    top: 50%;
+    right: 20px;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 1000;
+}
+
+.scroll-button button {
+    position: relative;
+
+    width: 45px;
+    height: 45px;
+
+    border: 1px solid var(--color-lime);
+
+    background-color: var(--color-carbon);
+    color: var(--color-off-white);
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+/* Pfeil nach oben */
+
+.scroll-button button::before {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-size: 20px;
+    line-height: 1;
+}
+
+.scroll-button button:first-child::before {
+    content: "↑";
+}
+
+.scroll-button button:last-child::before {
+    content: "↓";
+}
+
+
+/* Abgerundete Ecken */
+
+.scroll-button button:first-child {
+    border-radius: 8px 8px 0 0;
+}
+
+.scroll-button button:last-child {
+    border-radius: 0 0 8px 8px;
+}
+
+
+/* Hover */
+
+.scroll-button button:hover:not(:disabled) {
+    background-color: var(--color-graphite);
+
+    transform: scale(1.05);
+}
+
+
+/* Active */
+
+.scroll-button button:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+/* Disabled */
+.scroll-button button:disabled {
+    opacity: 0.3;
+
+    cursor: default;
+
+    pointer-events: none;
+}
+
+#scroll-top:focus-visible,
+#scroll-bottom:focus-visible {
+    outline: 2px solid var(--color-lime);
+    outline-offset: 3px;
+}
+
+/* ==================================================
+   BUTTONS – ACTIVE
+   ================================================== */
+
+.primary-button:active,
+.secondary-button:active,
+.login-button:active,
+.kurs-button:active,
+.membership-button:active {
+    transform: scale(0.97);
+}
+
+/* ==================================================
+   INTERAKTION – FOCUS
+   ================================================== */
+
+.primary-button:focus-visible,
+.secondary-button:focus-visible,
+.login-button:focus-visible,
+.kurs-button:focus-visible,
+.membership-button:focus-visible,
+nav a:focus-visible,
+.logo a:focus-visible {
+    outline: 2px solid var(--color-lime);
+    outline-offset: 4px;
+}
+
+#scroll-top:focus-visible,
+#scroll-bottom:focus-visible {
+    outline: 2px solid var(--color-lime);
+    outline-offset: 3px;
+}
+
+.footer-column a:focus-visible,
+.footer-legal a:focus-visible {
+    outline: 2px solid var(--color-lime);
+    outline-offset: 4px;
+}
+
+
