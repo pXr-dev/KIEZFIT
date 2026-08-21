@@ -1,9 +1,12 @@
-**KIEZFIT** - Responsive Fitnessstudio-Webprojekt entwickelt mit HTML, CSS und JavaScript.
+# KIEZFIT
 
 ![KIEZFIT Preview](assets/images/kiezfit-preview.webp)
 
-**KIEZFIT** ist ein praxisorientiertes Webentwicklungsprojekt zur Konzeption
-und Umsetzung einer modernen Fitnessstudio-Website.
+**Responsive Fitnessstudio-Webprojekt mit HTML, CSS und JavaScript.**
+
+[🌐 Live Demo](https://pxr-dev.github.io/KIEZFIT/)
+
+KIEZFIT ist ein praxisorientiertes Webentwicklungsprojekt zur Konzeption und Umsetzung einer modernen Fitnessstudio-Website.
 
 Im Mittelpunkt stehen eine klare Benutzerführung, responsives Webdesign,
 eine strukturierte HTML-/CSS-/JavaScript-Architektur sowie die
