@@ -8,7 +8,7 @@ header {
     align-items: center;
     justify-content: space-between;
 
-    padding: 20px 40px;
+    padding: var(--space-lg) var(--space-2xl);
 
     background-color: var(--color-carbon);
     border-bottom: 0.5px solid var(--color-graphite);
@@ -23,7 +23,7 @@ header {
 .kurse,
 .mitgliedschaften,
 .kontakt {
-    padding: 30px;
+    padding: var(--space-xl);
 }
 
 /* ==================================================
@@ -31,7 +31,7 @@ header {
    ================================================== */
 
 footer {
-    padding: 60px 40px 25px;
+    padding: var(--space-4xl) var(--space-2xl) 25px;
 
     background-color: var(--color-carbon);
 
