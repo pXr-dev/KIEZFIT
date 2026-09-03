@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
 
-    padding: 60px 40px;
+    padding: var(--space-4xl) var(--space-2xl);
 
     text-align: center;
 
@@ -26,13 +26,13 @@
     max-width: 800px;
     background-color: rgba(26, 26, 26, 0.82); /* color-carbon mit 82% Deckkraft */
     backdrop-filter: blur(4px); /* Macht feine Striche der Illustration im Hintergund weicher */
-    padding: 40px;
-    border-radius: 12px;
-    border: 1px solid var(--color-border);
+    padding: var(--space-2xl);
+    border-radius: var(--radius-lg);
+    border: var(--border-width-thin) solid var(--color-border);
 }
 
 .hero-subtitle {
-    margin-bottom: 20px;
+    margin-bottom: var(--space-md);
 
     color: var(--color-lime);
 
@@ -44,7 +44,7 @@
 
 /* H1 von Graphite auf White geändert für extrem starken Kontrast */
 .hero h1 {
-    margin: 0 0 25px 0;
+    margin: 0 0 var(--space-lg) 0;
 
     color: var(--color-white);
 
@@ -67,18 +67,20 @@
     display: flex;
     justify-content: center;
 
-    gap: 15px;
+    gap: var(--space-md);
 }
 
 /* Ergänzung für die Buttons im Hero (falls nicht in components.css) */
 .hero-buttons .primary-button {
     background-color: var(--color-lime);
     color: var(--color-carbon);
-    font-weight: bold;
+    font-weight: var(--font-weight-bold);
     padding: 14px 28px;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     text-decoration: none;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition:
+        transform var(--transition-fast),
+        opacity var(--transition-fast);
 }
 
 .hero-buttons .primary-button:hover {
@@ -89,12 +91,12 @@
 .hero-buttons .secondary-button {
     background-color: transparent;
     color: var(--color-white);
-    border: 2px solid var(--color-off-white);
+    border: var(--border-width-medium) solid var(--color-off-white);
     font-weight: 600;
     padding: 14px 28px;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     text-decoration: none;
-    transition: background-color 0.2s ease;
+    transition: background-color var(--transition-fast);
 }
 
 .hero-buttons .secondary-button:hover {
@@ -146,7 +148,7 @@
     min-height: 190px;
     height: auto;
 
-    padding: 25px;
+    padding: var(--space-lg);
 
     display: flex;
     flex-direction: column;
@@ -155,19 +157,19 @@
 
     background-color: var(--color-card);
 
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
+    border: var(--border-width-thin) solid var(--color-border);
+    border-radius: var(--radius-lg);
 
     text-align: center;
 
     transition:
-        border-color 0.25s ease,
-        transform 0.25s ease,
-        background-color 0.25s ease;
+        border-color var(--transition-normal),
+        transform var(--transition-normal),
+        background-color var(--transition-normal);
 }
 
 .studio-number {
-    margin-bottom: 10px;
+    margin-bottom: var(--space-sm);
 
     color: var(--color-lime);
 
@@ -360,7 +362,7 @@
 .studio-area:hover .studio-description {
     max-height: 70px;
 
-    margin-top: 15px;
+    margin-top: var(--space-md);
 
     opacity: 1;
 
@@ -395,11 +397,11 @@
 .kurs-card,
 .membership-card {
     background-color: var(--color-graphite);
-    border: 1px solid var(--color-graphite);
-    border-radius: 12px;
+    border: var(--border-width-thin) solid var(--color-graphite);
+    border-radius: var(--radius-lg);
     transition:
-        transform 0.2s ease,
-        border-color 0.2s ease;
+        transform var(--transition-fast),
+        border-color var(--transition-fast);
 }
 
 .leistung-card:hover,
@@ -417,13 +419,13 @@
 }
 
 .leistung-icon {
-    margin-bottom: 20px;
+    margin-bottom: var(--space-lg);
 
     font-size: 40px;
 }
 
 .leistung-card h3 {
-    margin-bottom: 15px;
+    margin-bottom: var(--space-md);
 
     font-size: var(--font-size-h3);
     line-height: var(--line-height-heading);
@@ -455,7 +457,8 @@
     font-size: var(--font-size-h2);
 }
 
-.section-content p:not(.section-subtitle) {
+.section-content p:not(.section-subtitle),
+.section-header p:not(.section-subtitle) {
     color: var(--color-off-white);
 
     font-size: var(--font-size-large);
@@ -475,19 +478,12 @@
 }
 
 .section-header h2 {
-    margin-bottom: 20px;
+    margin-bottom: var(--space-lg);
 
     color: var(--color-off-white);
 
     font-size: var(--font-size-h2);
     line-height: var(--line-height-heading);
-}
-
-.section-header p:not(.section-subtitle) {
-    color: var(--color-off-white);
-
-    font-size: var(--font-size-large);
-    line-height: var(--line-height-body);
 }
 
 /* ==================================================
@@ -525,7 +521,7 @@
     padding: var(--card-padding);
     display: flex;
     justify-content: space-between;
-    gap: 30px;
+    gap: var(--space-xl);
 }
 
 .kurs-info {
@@ -542,13 +538,15 @@
 }
 
 .kurs-card h3 {
-    margin: 12px 0;
+    margin: var(--space-sm) 0 var(--space-md);
 
     font-size: var(--font-size-h3);
     line-height: var(--line-height-heading);
 }
 
 .kurs-card p {
+    margin: 0;
+
     color: var(--color-off-white);
 
     font-size: var(--font-size-body);
@@ -559,9 +557,9 @@
     display: flex;
     flex-direction: column;
 
-    gap: 8px;
+    gap: var(--space-xs);
 
-    margin-top: 20px;
+    margin-top: var(--space-lg);
 
     font-size: var(--font-size-small);
 }
@@ -570,7 +568,7 @@
     display: flex;
     justify-content: center;
 
-    margin-top: 50px;
+    margin-top: var(--space-4xl);
 }
 
 /* ==================================================
@@ -599,7 +597,7 @@
 }
 
 .membership-featured {
-    border: 2px solid var(--color-lime);
+    border: var(--border-width-medium) solid var(--color-lime);
 }
 
 .membership-badge {
@@ -631,7 +629,7 @@
 }
 
 .membership-header h3 {
-    margin: 20px 0 10px;
+    margin: var(--space-lg) 0 var(--space-sm);
 
     color: var(--color-off-white);
 
@@ -645,6 +643,8 @@
 }
 
 .membership-header p {
+    margin: 0;
+
     color: var(--color-off-white);
 
     line-height: var(--line-height-body);
@@ -654,9 +654,9 @@
     display: flex;
     flex-direction: column;
 
-    gap: 15px;
+    gap: var(--space-md);
 
-    margin: 30px 0;
+    margin: var(--space-xl) 0;
     padding: 0;
 
     list-style: none;
@@ -683,12 +683,12 @@
 }
 
 .kontakt-card {
-    padding: 30px;
+    padding: var(--card-padding);
 
     background-color: var(--color-graphite);
 
-    border: 1px solid var(--color-graphite);
-    border-radius: 12px;
+    border: var(--border-width-thin) solid var(--color-graphite);
+    border-radius: var(--radius-lg);
 
     text-align: center;
 }
@@ -698,19 +698,21 @@
 }
 
 .kontakt-icon {
-    margin-bottom: 15px;
+    margin-bottom: var(--space-md);
 
     font-size: 35px;
 }
 
 .kontakt-card h3 {
-    margin-bottom: 15px;
+    margin: 0 0 var(--space-md);
 
     font-size: var(--font-size-h3);
     line-height: var(--line-height-heading);
 }
 
 .kontakt-card p {
+    margin: 0;
+
     color: var(--color-off-white);
 
     font-size: var(--font-size-body);
@@ -730,7 +732,7 @@
 }
 
 .footer-brand h3 {
-    margin-bottom: 15px;
+    margin-bottom: var(--space-md);
 
     color: var(--color-lime);
 
@@ -747,11 +749,11 @@
     display: flex;
     flex-direction: column;
 
-    gap: 12px;
+    gap: var(--space-sm);
 }
 
 .footer-column h4 {
-    margin-bottom: 10px;
+    margin-bottom: var(--space-sm);
 }
 
 .footer-column a {
@@ -759,7 +761,7 @@
 
     text-decoration: none;
 
-    transition: color 0.2s ease;
+    transition: color var(--transition-fast);
 }
 
 .footer-column a:hover {
@@ -769,7 +771,7 @@
 .footer-legal {
     display: flex;
 
-    gap: 20px;
+    gap: var(--space-lg);
 }
 
 .footer-legal a {
@@ -777,7 +779,7 @@
 
     text-decoration: none;
 
-    transition: color 0.2s ease;
+    transition: color var(--transition-fast);
 }
 
 .footer-legal a:hover {
