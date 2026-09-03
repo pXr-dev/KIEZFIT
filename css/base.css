@@ -38,6 +38,7 @@ body {
     --section-padding-y: var(--space-6xl);
 
     --grid-gap: 25px;
+    --card-padding: 35px;
 
     /* ==================================================
        COLORS
