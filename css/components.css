@@ -366,12 +366,6 @@ nav a:focus-visible,
     outline-offset: 4px;
 }
 
-#scroll-top:focus-visible,
-#scroll-bottom:focus-visible {
-    outline: 2px solid var(--color-lime);
-    outline-offset: 3px;
-}
-
 .footer-column a:focus-visible,
 .footer-legal a:focus-visible {
     outline: 2px solid var(--color-lime);

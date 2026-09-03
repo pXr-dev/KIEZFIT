@@ -48,10 +48,6 @@
         font-size: 3rem;
     }
 
-:root {
-    --section-padding-x: 30px;
-}
-
     .leistungen-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -236,11 +232,6 @@
     .secondary-button {
         text-align: center;
     }
-
-:root {
-    --section-padding-x: 20px;
-    --section-padding-y: 70px;
-}
 
     .section-content h2,
     .section-header h2 {
