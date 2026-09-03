@@ -70,37 +70,6 @@
     gap: 15px;
 }
 
-/* Ergänzung für die Buttons im Hero (falls nicht in components.css) */
-.hero-buttons .primary-button {
-    background-color: var(--color-lime);
-    color: var(--color-carbon);
-    font-weight: bold;
-    padding: 14px 28px;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.hero-buttons .primary-button:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
-}
-
-.hero-buttons .secondary-button {
-    background-color: transparent;
-    color: var(--color-white);
-    border: 2px solid var(--color-off-white);
-    font-weight: 600;
-    padding: 14px 28px;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-}
-
-.hero-buttons .secondary-button:hover {
-    background-color: rgba(244, 245, 247, 0.15);
-}
-
 /* ==================================================
    STUDIO
    ================================================== */
