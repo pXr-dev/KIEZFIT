@@ -23,7 +23,7 @@ header {
 .kurse,
 .mitgliedschaften,
 .kontakt {
-    padding: var(--space-xl);
+    padding: var(--section-padding-y) var(--section-padding-x);
 }
 
 /* ==================================================

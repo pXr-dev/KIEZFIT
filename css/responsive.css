@@ -48,14 +48,9 @@
         font-size: 3rem;
     }
 
-    .studio,
-    .leistungen,
-    .kurse,
-    .mitgliedschaften,
-    .kontakt {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
+:root {
+    --section-padding-x: 30px;
+}
 
     .leistungen-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -242,24 +237,21 @@
         text-align: center;
     }
 
-    .studio,
-    .leistungen,
-    .kurse,
-    .mitgliedschaften,
-    .kontakt {
-        padding: 70px 20px;
-    }
+:root {
+    --section-padding-x: 20px;
+    --section-padding-y: 70px;
+}
 
     .section-content h2,
     .section-header h2 {
         font-size: clamp(2rem, 8vw, 2.625rem);
     }
 
-    .leistungen-grid {
-        grid-template-columns: 1fr;
+    .studio-area h3 {
+        font-size: clamp(0.5rem, 5vw, var(--font-size-h3));
     }
 
-    .kurse-grid {
+    .leistungen-grid {
         grid-template-columns: 1fr;
     }
 
@@ -308,5 +300,16 @@
 
     .scroll-button button::before {
         font-size: 18px;
+    }
+}
+
+@media (max-width: 350px) {
+    .leistung-card {
+        padding: 25px;
+    }
+
+    .leistung-card h3 {
+        font-size: clamp(1rem, 5vw, var(--font-size-h3));
+        overflow-wrap: break-word;
     }
 }

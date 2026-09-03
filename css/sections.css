@@ -110,19 +110,17 @@
     flex-direction: column;
     align-items: center;
 
-    padding: var(--space-6xl) var(--space-2xl);
-
     background-color: var(--color-carbon);
 
     text-align: center;
 }
-
 
 /* ==================================================
    STUDIO MAP
    ================================================== */
 
 .studio-map {
+    width: 100%;
     max-width: 1000px;
 
     margin: 45px auto 0;
@@ -141,6 +139,7 @@
 .studio-area {
     position: relative;
 
+    min-width: 0;
     width: 100%;
     max-width: 300px;
 
@@ -203,6 +202,7 @@
     grid-column: 1 / 3;
     grid-row: 2;
 
+    min-width: 0;
     width: 180px;
     height: 180px;
 
@@ -370,11 +370,63 @@
 /* ==================================================
    LEISTUNGEN
    ================================================== */
+   
 .leistungen {
     background-image: url("../assets/images/studio.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.leistungen-grid {
+    max-width: var(--container-max-width);
+    min-width: 0;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: var(--grid-gap);
+}
+
+.leistung-card {
+    padding: 35px;
+
+    background-color: var(--color-graphite);
+
+    border: 1px solid var(--color-graphite);
+    border-radius: 12px;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.leistung-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--color-lime);
+}
+
+.leistung-icon {
+    margin-bottom: 20px;
+
+    font-size: 40px;
+}
+
+.leistung-card h3 {
+    margin-bottom: 15px;
+
+    font-size: var(--font-size-h3);
+    line-height: var(--line-height-heading);
+}
+
+.leistung-card p {
+    color: var(--color-off-white);
+
+    line-height: var(--line-height-body);
 }
 
 /* ==================================================
@@ -445,60 +497,6 @@
     font-weight: var(--font-weight-bold);
 
     letter-spacing: 3px;
-}
-
-/* ==================================================
-   LEISTUNGEN
-   ================================================== */
-
-.leistungen-grid {
-    max-width: var(--container-max-width);
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: var(--grid-gap);
-}
-
-.leistung-card {
-    padding: 35px;
-
-    background-color: var(--color-graphite);
-
-    border: 1px solid var(--color-graphite);
-    border-radius: 12px;
-
-    transition:
-        transform 0.2s ease,
-        border-color 0.2s ease;
-}
-
-.leistung-card:hover {
-    transform: translateY(-5px);
-
-    border-color: var(--color-lime);
-}
-
-.leistung-icon {
-    margin-bottom: 20px;
-
-    font-size: 40px;
-}
-
-.leistung-card h3 {
-    margin-bottom: 15px;
-
-    font-size: var(--font-size-h3);
-    line-height: var(--line-height-heading);
-}
-
-.leistung-card p {
-    color: var(--color-off-white);
-
-    line-height: var(--line-height-body);
 }
 
 /* ==================================================

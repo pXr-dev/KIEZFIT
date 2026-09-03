@@ -16,6 +16,15 @@ body {
     overflow-x: hidden;
 }
 
+body {
+    margin: 0;
+
+    font-family: var(--font-family-base);
+
+    background-color: var(--color-carbon);
+    color: var(--color-off-white);
+}
+
 :root {
 
     /* ==================================================
@@ -83,25 +92,6 @@ body {
     --space-6xl: 100px;
 
     /* ==================================================
-      LAYOUT
-      ================================================== */
-
-    --container-max-width: 1200px;
-    --container-content-width: 750px;
-
-    --section-padding-x: var(--space-2xl);
-    --section-padding-y: var(--space-6xl);
-
-    --grid-gap: 25px;
-
-    /* ==================================================
-      CONTAINER
-      ================================================== */
-
-    --container-max-width: 1200px;
-    --content-max-width: 750px;
-
-    /* ==================================================
        BORDER RADIUS
        ================================================== */
 
@@ -110,7 +100,6 @@ body {
     --radius-lg: 12px;
     --radius-pill: 999px;
 
-
     /* ==================================================
        BORDERS
        ================================================== */
@@ -118,20 +107,10 @@ body {
     --border-width-thin: 1px;
     --border-width-medium: 2px;
 
-
     /* ==================================================
        TRANSITIONS
        ================================================== */
 
     --transition-fast: 0.2s ease;
     --transition-normal: 0.25s ease;
-}
-
-body {
-    margin: 0;
-
-    font-family: var(--font-family-base);
-
-    background-color: var(--color-carbon);
-    color: var(--color-off-white);
 }
