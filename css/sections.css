@@ -311,10 +311,10 @@
     transform: translateY(10px);
 
     transition:
-        max-height 0.35s ease,
-        margin-top 0.35s ease,
-        opacity 0.25s ease,
-        transform 0.35s ease;
+        max-height var(--transition-normal),
+        margin-top var(--transition-normal),
+        opacity var(--transition-fast),
+        transform var(--transition-normal);
 }
 
 .studio-description p {

@@ -5,7 +5,7 @@
 @media (max-width: 900px) {
 
     header {
-        padding: 20px 25px;
+        padding: var(--space-lg) var(--space-md);
 
         gap: 20px;
     }
@@ -21,13 +21,13 @@
 
         justify-content: center;
 
-        gap: 12px;
+        gap: var(--space-sm);
 
         min-width: 0;
     }
 
     nav a {
-        font-size: 14px;
+        font-size: var(--font-size-small);
 
         white-space: nowrap;
     }
@@ -39,7 +39,7 @@
     .login-button {
         padding: 9px 14px;
 
-        font-size: 14px;
+        font-size: var(--font-size-small);
 
         white-space: nowrap;
     }
@@ -80,7 +80,7 @@
 @media (max-width: 700px) {
 
     header {
-        padding: 20px 25px;
+        padding: var(--space-lg) var(--space-md);
 
         justify-content: space-between;
         align-items: center;
@@ -121,9 +121,9 @@
         transform: translateY(-10px);
 
         transition:
-            opacity 0.2s ease,
-            transform 0.2s ease,
-            visibility 0.2s ease;
+            opacity var(--transition-fast),
+            transform var(--transition-fast),
+            visibility var(--transition-fast);
     }
 
 
@@ -143,8 +143,8 @@
         transform: translateY(-5px);
 
         transition:
-            opacity 0.2s ease,
-            transform 0.2s ease;
+            opacity var(--transition-fast),
+            transform var(--transition-fast);
     }
 
 

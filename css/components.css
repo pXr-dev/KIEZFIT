@@ -31,8 +31,7 @@
 
 nav {
     display: flex;
-    gap: 25px;
-
+    gap: var(--grid-gap);
     flex-shrink: 1;
 }
 
@@ -40,7 +39,7 @@ nav a {
     color: var(--color-off-white);
     text-decoration: none;
 
-    transition: color 0.2s ease;
+    transition: color var(--transition-fast);
 }
 
 nav a:hover {
@@ -63,7 +62,7 @@ nav a:hover {
 
     padding: 9px 14px;
 
-    border-radius: 8px;
+    border-radius: var(--radius-md);
 
     background-color: var(--color-lime);
     color: var(--color-carbon);
@@ -74,8 +73,8 @@ nav a:hover {
     font-weight: var(--font-weight-bold);
 
     transition:
-        transform 0.2s ease,
-        background-color 0.2s ease;
+        transform var(--transition-fast),
+        background-color var(--transition-fast);
 }
 
 .login-button:hover {
@@ -91,7 +90,7 @@ nav a:hover {
 
     padding: 14px 28px;
 
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
 
     background-color: var(--color-lime);
     color: var(--color-carbon);
@@ -100,8 +99,9 @@ nav a:hover {
 
     font-weight: var(--font-weight-bold);
 
-    /* Semikolon durch Komma ersetzt */
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition:
+        transform var(--transition-fast),
+        opacity var(--transition-fast);
 }
 
 .primary-button:hover {
@@ -114,9 +114,8 @@ nav a:hover {
 
     padding: 14px 28px;
 
-    /* Rand sichtbar gemacht auf dunklem Grund */
     border: 2px solid var(--color-off-white);
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
 
     color: var(--color-off-white);
 
@@ -125,9 +124,9 @@ nav a:hover {
     font-weight: var(--font-weight-bold);
 
     transition:
-        border-color 0.2s ease,
-        color 0.2s ease,
-        background-color 0.2s ease;
+        border-color var(--transition-fast),
+        color var(--transition-fast),
+        background-color var(--transition-fast);
 }
 
 .secondary-button:hover {
@@ -145,7 +144,7 @@ nav a:hover {
 
     padding: 12px 20px;
 
-    border-radius: 8px;
+    border-radius: var(--radius-md);
 
     background-color: var(--color-lime);
     color: var(--color-carbon);
@@ -167,7 +166,7 @@ nav a:hover {
     margin-top: auto;
     padding: 14px 20px;
 
-    border-radius: 8px;
+    border-radius: var(--radius-md);
 
     background-color: var(--color-lime);
     color: var(--color-carbon);
@@ -182,7 +181,7 @@ nav a:hover {
     background-color: transparent;
     color: var(--color-off-white);
 
-    border: 1px solid var(--color-off-white);
+    border: var(--border-width-thin) solid var(--color-off-white);
 }
 
 
@@ -270,12 +269,10 @@ nav a:hover {
     cursor: pointer;
 
     transition:
-        background-color 0.2s ease,
-        transform 0.2s ease,
-        opacity 0.2s ease;
+        background-color var(--transition-fast),
+        transform var(--transition-fast),
+        opacity var(--transition-fast);
 }
-
-/* Pfeil nach oben */
 
 .scroll-button button::before {
     position: absolute;
