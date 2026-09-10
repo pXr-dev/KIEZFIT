@@ -1,0 +1,694 @@
+```html
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KIEZFIT - Decisions</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1A1A1A;
+            color: #F4F5F7;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 20px 40px;
+
+            background-color: rgba(26, 26, 26, 0.95);
+            border-bottom: 1px solid #2D2D2D;
+            backdrop-filter: blur(8px);
+        }
+
+        .logo {
+            color: #E2F100;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo sub {
+            font-size: 0.6rem;
+            vertical-align: super;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #F4F5F7;
+            font-size: 0.875rem;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #E2F100;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 40px;
+        }
+
+        .page-header {
+            max-width: 750px;
+            margin-bottom: 60px;
+        }
+
+        .eyebrow {
+            margin: 0 0 10px;
+
+            color: #E2F100;
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0 0 20px;
+
+            color: #F8F9FA;
+            font-size: 3.5rem;
+            line-height: 1.1;
+        }
+
+        .intro {
+            margin: 0;
+
+            color: #F4F5F7;
+            font-size: 1.125rem;
+        }
+
+        .decisions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .decision {
+            padding: 35px;
+
+            background-color: #2D2D2D;
+            border: 1px solid #3A3A3A;
+            border-radius: 12px;
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .decision:hover {
+            transform: translateY(-4px);
+            border-color: #E2F100;
+        }
+
+        .decision-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 36px;
+            height: 36px;
+            margin-bottom: 20px;
+
+            background-color: #E2F100;
+            color: #1A1A1A;
+
+            border-radius: 50%;
+
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+
+        .decision h2 {
+            margin: 0 0 15px;
+
+            color: #F8F9FA;
+            font-size: 1.625rem;
+            line-height: 1.2;
+        }
+
+        .decision-label {
+            margin: 20px 0 5px;
+
+            color: #E2F100;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .decision p {
+            margin: 0;
+
+            color: #F4F5F7;
+            font-size: 1rem;
+        }
+
+        .principles {
+            margin-top: 80px;
+            padding: 40px;
+
+            background-color: #1A1A1A;
+            border: 1px solid #3A3A3A;
+            border-radius: 12px;
+        }
+
+        .principles h2 {
+            margin: 0 0 25px;
+
+            color: #F8F9FA;
+            font-size: 2rem;
+        }
+
+        .principles-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .principle {
+            padding: 20px;
+
+            background-color: #2D2D2D;
+            border-radius: 8px;
+        }
+
+        .principle strong {
+            display: block;
+            margin-bottom: 8px;
+
+            color: #E2F100;
+        }
+
+        .principle span {
+            color: #F4F5F7;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            padding: 30px 40px;
+
+            border-top: 1px solid #2D2D2D;
+
+            color: #9A9A9A;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 900px) {
+            header {
+                padding: 20px;
+            }
+
+            main {
+                padding: 80px 30px;
+            }
+
+            .decisions {
+                grid-template-columns: 1fr;
+            }
+
+            .principles-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            header {
+                position: relative;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                justify-content: flex-start;
+                gap: 12px 18px;
+            }
+
+            h1 {
+                font-size: 2.625rem;
+            }
+
+            main {
+                padding: 60px 20px;
+            }
+
+            .decision,
+            .principles {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            h1 {
+                font-size: 2.25rem;
+            }
+
+            nav {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a class="logo" href="../index.html">
+            KIEZFIT<sub>&copy;</sub>
+        </a>
+
+        <nav aria-label="Dokumentationsnavigation">
+            <a href="roadmap.html">Roadmap</a>
+            <a href="progress.html">Progress</a>
+            <a href="design.html">Design</a>
+            <a href="technical.html">Technical</a>
+            <a class="active" href="decisions.html">Decisions</a>
+            <a href="issues.html">Issues</a>
+            <a href="milestones.html">Milestones</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="page-header">
+            <p class="eyebrow">Dokumentation · Version 0.1.0</p>
+
+            <h1>Warum wurde es so gebaut?</h1>
+
+            <p class="intro">
+                Diese Seite dokumentiert zentrale Entscheidungen, die während
+                der Entwicklung von KIEZFIT getroffen wurden. Sie beschreibt
+                nicht nur das Ergebnis, sondern auch die Gründe und Auswirkungen
+                der jeweiligen Entscheidungen.
+            </p>
+        </section>
+
+        <section class="decisions">
+
+            <article class="decision">
+                <span class="decision-number">01</span>
+
+                <h2>Statisches Frontend als Grundlage</h2>
+
+                <p class="decision-label">Entscheidung</p>
+                <p>
+                    KIEZFIT wurde zunächst als statische Website mit HTML,
+                    CSS und JavaScript umgesetzt.
+                </p>
+
+                <p class="decision-label">Begründung</p>
+                <p>
+                    Die visuelle und technische Grundlage sollte zuerst stabil
+                    aufgebaut werden, bevor Backend, Benutzerkonten und
+                    dynamische Funktionen hinzukommen.
+                </p>
+
+                <p class="decision-label">Auswirkung</p>
+                <p>
+                    Version 0.1.0 bleibt überschaubar, schnell testbar und
+                    bildet gleichzeitig die Grundlage für spätere Ausbaustufen.
+                </p>
+            </article>
+
+            <article class="decision">
+                <span class="decision-number">02</span>
+
+                <h2>CSS auf mehrere Dateien aufgeteilt</h2>
+
+                <p class="decision-label">Entscheidung</p>
+                <p>
+                    Die Styles wurden auf fünf CSS-Dateien verteilt:
+                    Base, Layout, Components, Sections und Responsive.
+                </p>
+
+                <p class="decision-label">Begründung</p>
+                <p>
+                    Eine klare Trennung erleichtert Wartung, Fehlersuche und
+                    spätere Erweiterungen.
+                </p>
+
+                <p class="decision-label">Auswirkung</p>
+                <p>
+                    Änderungen können gezielter vorgenommen werden, ohne eine
+                    einzelne große CSS-Datei bearbeiten zu müssen.
+                </p>
+            </article>
+
+            <article class="decision">
+                <span class="decision-number">03</span>
+
+                <h2>Zentrale CSS-Variablen</h2>
+
+                <p class="decision-label">Entscheidung</p>
+                <p>
+                    Farben, Abstände, Schriftgrößen, Radien und Übergänge
+                    werden zentral über CSS Custom Properties definiert.
+                </p>
+
+                <p class="decision-label">Begründung</p>
+                <p>
+                    Wiederkehrende Werte sollen konsistent bleiben und sich
+                    später möglichst an einer zentralen Stelle ändern lassen.
+                </p>
+
+                <p class="decision-label">Auswirkung</p>
+                <p>
+                    Das Design besitzt ein einheitliches Wertesystem und kann
+                    in zukünftigen Versionen leichter weiterentwickelt werden.
+                </p>
+            </article>
+
+            <article class="decision">
+                <span class="decision-number">04</span>
+
+                <h2>Dunkle Farbwelt mit Lime-Akzent</h2>
+
+                <p class="decision-label">Entscheidung</p>
+                <p>
+                    Carbon, Graphit und Off-White bilden die Grundlage.
+                    Lime wird als gezielter Akzent eingesetzt.
+                </p>
+
+                <p class="decision-label">Begründung</p>
+                <p>
+                    Die Kombination unterstützt den sportlichen und modernen
+                    Charakter der Marke und schafft gleichzeitig eine klare
+                    visuelle Hierarchie.
+                </p>
+
+                <p class="decision-label">Auswirkung</p>
+                <p>
+                    Interaktive Elemente und wichtige Inhalte lassen sich
+                    schnell erkennen, ohne das gesamte Interface mit Akzentfarbe
+                    zu überladen.
+                </p>
+            </article>
+
+            <article class="decision">
+                <span class="decision-number">05</span>
+
+                <h2>Textbasierter Schriftzug als Logo</h2>
+
+                <p class="decision-label">Entscheidung</p>
+                <p>
+                    Das KIEZFIT-Logo wurde als HTML-Text umgesetzt und nicht
+                    als Bild eingebunden.
+                </p>
+
+                <p class="decision-label">Begründung</p>
+                <p>
+                    Der Ansatz benötigt keine zusätzliche Bilddatei, ist
+                    skalierbar und lässt sich direkt über CSS gestalten.
+                </p>
+
+                <p class="decision-label">Auswirkung</p>
+                <p>
+                    Das Logo bleibt leichtgewichtig und kann später ohne
+                    Austausch einer Grafik angepasst werden.
+                </p>
+            </article>
+
+            <article class="decision">
+                <span class="decision-number">06</span>
+
+                <h2>Individuelle Studio-Landkarte</h2>
+
+                <p class="decision-label">Entscheidung</p>
+                <p>
+                    Der Studio-Bereich wurde nicht als gewöhnliches Kartenraster,
+                    sondern als visuelle Studio-Landkarte gestaltet.
+                </p>
+
+                <p class="decision-label">Begründung</p>
+                <p>
+                    Ausstattung, Community, Atmosphäre und Betreuung sollen
+                    als zusammengehörige Bestandteile des Studios wahrgenommen
+                    werden.
+                </p>
+
+                <p class="decision-label">Auswirkung</p>
+                <p>
+                    Der Bereich erhält eine eigenständige visuelle Identität
+                    und unterscheidet sich bewusst von den standardisierten
+                    Kartenrastern der anderen Abschnitte.
+                </p>
+            </article>
+
+            <article class="decision">
+                <span class="decision-number">07</span>
+
+                <h2>Responsive Design über Media Queries</h2>
+
+                <p class="decision-label">Entscheidung</p>
+                <p>
+                    Die Website passt sich über mehrere Breakpoints an
+                    unterschiedliche Bildschirmgrößen an.
+                </p>
+
+                <p class="decision-label">Begründung</p>
+                <p>
+                    Desktop, Tablet und Smartphone sollen dieselbe Website
+                    nutzen und dabei jeweils sinnvoll angeordnet werden.
+                </p>
+
+                <p class="decision-label">Auswirkung</p>
+                <p>
+                    Navigation, Grids, Karten und Buttons verändern ihre
+                    Anordnung abhängig von der verfügbaren Bildschirmbreite.
+                </p>
+            </article>
+
+            <article class="decision">
+                <span class="decision-number">08</span>
+
+                <h2>JavaScript bewusst schlank gehalten</h2>
+
+                <p class="decision-label">Entscheidung</p>
+                <p>
+                    Für Version 0.1.0 wird kein Framework eingesetzt.
+                    JavaScript übernimmt nur die benötigten Interaktionen.
+                </p>
+
+                <p class="decision-label">Begründung</p>
+                <p>
+                    Die vorhandenen Funktionen sind überschaubar und lassen
+                    sich mit Vanilla JavaScript direkt und verständlich
+                    umsetzen.
+                </p>
+
+                <p class="decision-label">Auswirkung</p>
+                <p>
+                    Es entstehen keine zusätzlichen Framework-Abhängigkeiten
+                    und die bestehende Logik bleibt leicht nachvollziehbar.
+                </p>
+            </article>
+
+            <article class="decision">
+                <span class="decision-number">09</span>
+
+                <h2>WebP für große Bildassets</h2>
+
+                <p class="decision-label">Entscheidung</p>
+                <p>
+                    Große Website-Bilder wurden für die produktive Nutzung
+                    als WebP-Dateien optimiert.
+                </p>
+
+                <p class="decision-label">Begründung</p>
+                <p>
+                    Die Bilddateien hatten einen relevanten Anteil an der
+                    Gesamtgröße der Website und sollten ohne sichtbaren
+                    Qualitätsverlust verkleinert werden.
+                </p>
+
+                <p class="decision-label">Auswirkung</p>
+                <p>
+                    Hero- und Studio-Bild konnten deutlich verkleinert werden,
+                    wodurch die Ladeeffizienz verbessert wurde.
+                </p>
+            </article>
+
+            <article class="decision">
+                <span class="decision-number">10</span>
+
+                <h2>Accessibility bereits in 0.1.0</h2>
+
+                <p class="decision-label">Entscheidung</p>
+                <p>
+                    Barrierearme Grundlagen wurden bereits während der
+                    Umsetzung berücksichtigt.
+                </p>
+
+                <p class="decision-label">Begründung</p>
+                <p>
+                    Accessibility sollte nicht erst nachträglich ergänzt
+                    werden, sondern Bestandteil der grundlegenden Umsetzung sein.
+                </p>
+
+                <p class="decision-label">Auswirkung</p>
+                <p>
+                    Unter anderem werden semantische HTML-Strukturen,
+                    ARIA-Attribute und sichtbare Fokuszustände verwendet.
+                </p>
+            </article>
+
+            <article class="decision">
+                <span class="decision-number">11</span>
+
+                <h2>GitHub als Entwicklungs- und Versionsplattform</h2>
+
+                <p class="decision-label">Entscheidung</p>
+                <p>
+                    Entwicklung, Issues, Milestones, Pull Requests und
+                    Versionsstände werden über Git und GitHub organisiert.
+                </p>
+
+                <p class="decision-label">Begründung</p>
+                <p>
+                    Änderungen sollen nachvollziehbar bleiben und einzelne
+                    Entwicklungsaufgaben klar voneinander getrennt werden können.
+                </p>
+
+                <p class="decision-label">Auswirkung</p>
+                <p>
+                    GitHub bildet die vollständige technische Aufgaben- und
+                    Commit-Historie des Projekts ab.
+                </p>
+            </article>
+
+            <article class="decision">
+                <span class="decision-number">12</span>
+
+                <h2>Login und Mitgliederbereich bewusst verschoben</h2>
+
+                <p class="decision-label">Entscheidung</p>
+                <p>
+                    Login, Mitgliederbereich und die vorbereiteten Unterseiten
+                    werden nicht als fertige Funktionen Bestandteil von 0.1.0.
+                </p>
+
+                <p class="decision-label">Begründung</p>
+                <p>
+                    Zuerst soll die öffentliche Website als stabile Grundlage
+                    fertiggestellt werden. Dynamische Funktionen benötigen
+                    später eine eigene technische Basis.
+                </p>
+
+                <p class="decision-label">Auswirkung</p>
+                <p>
+                    <code>login.html</code> und die Dateien unter
+                    <code>pages/</code> dienen zunächst als Vorbereitung für
+                    zukünftige Versionen.
+                </p>
+            </article>
+
+            <article class="decision">
+                <span class="decision-number">13</span>
+
+                <h2>Bekannten CSS-Punkt für 0.1.1 zurückgestellt</h2>
+
+                <p class="decision-label">Entscheidung</p>
+                <p>
+                    Die fehlende Definition von
+                    <code>--color-card</code> wird nicht mehr in Version 0.1.0
+                    geändert.
+                </p>
+
+                <p class="decision-label">Begründung</p>
+                <p>
+                    Die aktuelle Version soll stabil abgeschlossen werden.
+                    Eine technische Bereinigung kann kontrolliert in der
+                    nächsten Version erfolgen.
+                </p>
+
+                <p class="decision-label">Auswirkung</p>
+                <p>
+                    Der Punkt ist als bekanntes technisches To-do für
+                    Version 0.1.1 dokumentiert und wird nicht vergessen.
+                </p>
+            </article>
+
+        </section>
+
+        <section class="principles">
+
+            <h2>Übergeordnete Entwicklungsprinzipien</h2>
+
+            <div class="principles-list">
+
+                <div class="principle">
+                    <strong>Schrittweise entwickeln</strong>
+                    <span>
+                        Funktionen werden in klar abgegrenzten Entwicklungsphasen
+                        umgesetzt.
+                    </span>
+                </div>
+
+                <div class="principle">
+                    <strong>Bestehendes nicht unnötig verändern</strong>
+                    <span>
+                        Bereits funktionierende Bereiche werden nur geändert,
+                        wenn ein konkreter technischer oder gestalterischer
+                        Grund besteht.
+                    </span>
+                </div>
+
+                <div class="principle">
+                    <strong>Zukunft vorbereiten</strong>
+                    <span>
+                        Die aktuelle Version bleibt überschaubar, soll aber
+                        spätere Erweiterungen technisch und strukturell ermöglichen.
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        KIEZFIT · Projektdokumentation · Version 0.1.0
+    </footer>
+
+</body>
+
+</html>
+```

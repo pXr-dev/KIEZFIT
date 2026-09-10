@@ -1,280 +1,675 @@
-<!-- Phase 3 – Visuelles Design & UX -->
+```html
+<!DOCTYPE html>
+<html lang="de">
 
-<!-- Ablaufplan --> 
-    ca. 8–12 Stunden reine Arbeitszeit (3-5 Tage)
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!--########################################-->    
-<!--# 3.1 Bestandsaufnahme & Design-Freeze #-->  
-<!--########################################-->   
-        
-            <!-- 1. Technischer Stand -->
-                KIEZFIT/
-                │
-                ├── index.html
-                │
-                ├── css/
-                    │   ├── base.css
-                    │   ├── layout.css
-                    │   ├── components.css
-                    │   ├── sections.css
-                    │   └── responsive.css
-                    │
-                    ├── js/
-                    │   └── script.js
-                    │
-                    └── ...
+    <title>KIEZFIT - Milestones</title>
 
-            <!-- 2. Farbpalette – Design-Freeze -->
-                | Variable            | Wert      | Verwendung                 |
-                | ------------------- | --------- | -------------------------- |
-                | `--color-carbon`    | `#1A1A1A` | Haupt-Hintergrund          |
-                | `--color-off-white` | `#F4F5F7` | Haupttext                  |
-                | `--color-lime`      | `#E2F100` | Akzent / CTA               |
-                | `--color-graphite`  | `#2D2D2D` | Karten / sekundäre Flächen |
-                | `--color-white`     | `#FFFFFF` | Weiß                       |
-                | `--color-border`    | `#3A3A3A` | Rahmen                     |
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-            <!-- 3. Bereits fertige Interaktionen -->
-                > Navigation
-                    Desktop-Navigation
-                    Mobile Navigation
-                    Hamburger-Menü
-                    Hamburger → X Animation
-                    aria-expanded
-                    Schließen nach Klick auf einen Navigationslink
-                > Scroll-System
-                    Scroll nach oben
-                    Scroll nach unten
-                    Abschnittsweises Scrollen
-                    Smooth Scrolling
-                    Button-Status
-                    Disabled-Zustände
-                > Interaktion
-                    Hover
-                    Active
-                    Focus-visible
-                    Button-Transitions
-                    Card-Hover
-                    Hamburger-Animation
-                --> Funktionen werden in 3.6 Interaktionen & Animationen
-                    auf Optimierungspotenzial geprüft
-            
-            <!-- 4. Bestehende visuelle Komponenten UI-System -->
-                > Header
-                    Logo, Navigation, Login, Hamburger
-                > Hero
-                    Subtitle, H1, Beschreibung, Primary CTA, Secondary CTA
-                > Leistungen
-                    Grid, Leistungskarten, Icons, Hover
-                > Kurse
-                    Kurskarten, Kursinformationen, Kursbutton, Hover
-                > Mitgliedschaften
-                    Pricing Cards, Featured Card, Badge, Feature-Liste, CTA
-                > Kontakt
-                    Kontaktkarten, Icons, Informationen
-                > Footer
-                    Branding, Linkbereiche, rechtliche Links, Footer Bottom
-                > Scroll Button
-                    Up, Down, Hover, Active, Disabled, Focus
-            
-            <!--5. Überprüfung -->
-                > Optik
-                    Bilder, visuelle Gewichtung, Branding, Typografie, Kontraste
-                > Layout
-                    Section-Abstände, Card-Abstände, Grid-Gaps, Content-Breiten, Header/Footer-Abstände
-                > UX
-                    Hover, Active, Focus, Animationen, Navigation, Scroll-Verhalten
-                > Responsive
+        html {
+            scroll-behavior: smooth;
+        }
 
-            <!-- 6. Design-Freeze – Status -->
-                | Punkt                     | Status         |
-                | ------------------------- | -------------- |
-                | CSS-Struktur              | check          |
-                | JS-Struktur               | check          |
-                | Farbpalette               | 🔒 eingefroren |
-                | Komponenten               | check          |
-                | Navigation                | check          |
-                | Hamburger                 | check          |
-                | Scroll-System             | check          |
-                | Responsive-Grundstruktur  | check          |
-                | Interaktionen             | check          |
-                | Änderungsumfang definiert | check          |
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1A1A1A;
+            color: #F4F5F7;
+            line-height: 1.6;
+        }
 
-<!--########################################-->    
-<!--# 3.2 Bilder & visuelle Inhalte        #-->     
-<!--########################################-->            
-    Hero hintergrund festgelegt und in css eingefügt
-    Section Leistungen hintergrund festgelegt und in css eingefügt
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
 
-Überlegung welche Bereiche Bilder benötigen
-            Bilder auswählen
-            passende Größen bestimmen
-            `object-fit`
-            Seitenverhältnisse
-            Bildpositionierung
-            responsive Verhalten
-            Ladezeiten berücksichtigen
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-<!--########################################-->    
-<!--# Section Studio                       #-->     14:50 - 16:06 Uhr    
-<!--########################################-->     76 Min
-    Aufbau:
-        > Schritt 1
-            HTML-Struktur für die neue Studio-Landkarte.
-        > Schritt 2
-            Desktop-Layout.
-        > Schritt 3
-            Typografie und Abstände an unser bestehendes Design anpassen.
-        > Schritt 4
-            Responsive Variante.
-        > Schritt 5
-            Die vier Bereiche visuell gestalten.
-        > Schritt 6
-            Hover/Active-Interaktion
+            padding: 20px 40px;
 
+            background-color: rgba(26, 26, 26, 0.95);
+            border-bottom: 1px solid #2D2D2D;
+            backdrop-filter: blur(8px);
+        }
 
+        .logo {
+            color: #E2F100;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
 
-    3.3 Logo & Branding                                     |
-        ca. 45–60 Minuten
-        Überprüfung KIEZFIT-Logo
-            Größe
-            Position
-            Typografie
-            `KIEZFIT`
-            ®/Subscript-Darstellung
-            Abstand zum Header
-            mobile Darstellung
-            Footer-Darstellung
-        Entscheidung Textlogo oder grafisches Logo 
+        .logo sub {
+            font-size: 0.6rem;
+            vertical-align: super;
+        }
 
-    3.4 Typografie & visuelle Hierarchie                    |
-        ca. 1–1,5 Stunden**
-        Überprüfung
-            H1
-            H2
-            H3
-            Fließtext
-            Buttons
-            Navigation
-            kleine Labels
-            Abstände
-            Font
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 20px;
+        }
 
-    3.5 Abstände & Layout-Feinschliff                       |
-        ca. 1–1,5 Stunden**
-        UI-Feinschliff
-            Section-Abstände
-            Card-Padding
-            Grid-Gaps
-            Button-Abstände
-            Header-Abstände
-            Footer-Abstände
-            maximale Content-Breiten
-        -> Vermeidung von „Magic Numbers“
+        nav a {
+            color: #F4F5F7;
+            font-size: 0.875rem;
+            transition: color 0.2s ease;
+        }
 
-    3.6 Interaktionen & Animationen                         |
-        ca. 1–1,5 Stunden**
-        Bereits vorhanden:
-            Hover
-            Active
-            Focus
-            Hamburger Animation
-            Mobile Navigation
-            Smooth Scrolling
-        Mögliche Erweiterungen:
-            Card Hover
-            Button Hover
-            subtilere Transitions
-            Navigation
-            Bild-Transitions
-            eventuell Scroll-Reveal
+        nav a:hover,
+        nav a.active {
+            color: #E2F100;
+        }
 
-    3.7 Responsive Visual Polish                            |
-        ca. 1–1,5 Stunden**
-        testen auf:
-            1920px, 1440px, 1200px, 1024px,
-            900px, 768px, 700px, 600px, 480px,
-            375px, 320px
-        besondere Beachtung:
-            Bilder
-            Textumbrüche
-            Buttons
-            Karten
-            Navigation
-            Header
-            Footer
-            horizontales Überlaufen
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 40px;
+        }
 
-    3.8 Performance & technische Bereinigung                |
-        ca. 45–60 Minuten**
-        Abschluss:
-            unnötiges CSS suchen
-            doppelte Regeln suchen
-            unnötige Übergänge entfernen
-            Bildgrößen prüfen
-            Dateistruktur prüfen
-            Browser-Konsole prüfen
-            HTML/CSS/JS auf offensichtliche Fehler prüfen
-        Testing:
-            über einen lokalen HTTP-Server, statt nur über `file://`
+        .page-header {
+            max-width: 750px;
+            margin-bottom: 70px;
+        }
 
-    3.9 Abschlussprüfung                                    |
-        ca. 30–45 Minuten**
-        Quality Gate
-            Funktion
-                [ ] Navigation
-                [ ] Hamburger
-                [ ] Scroll-Buttons
-                [ ] Buttons
-                [ ] Links
-                [ ] Login
-                [ ] Mobile Navigation
-            Design
-                [ ] Farben
-                [ ] Typografie
-                [ ] Abstände
-                [ ] Karten
-                [ ] Bilder
-                [ ] Logo
-                [ ] Footer
-            Responsive
-                [ ] Desktop
-                [ ] Tablet
-                [ ] Mobile
-                [ ] kleine Smartphones
-            Technik
-                [ ] Console sauber
-                [ ] kein horizontaler Overflow
-                [ ] CSS sauber aufgeteilt
-                [ ] JS sauber
-                [ ] keine offensichtlichen Duplikate
+        .eyebrow {
+            margin: 0 0 10px;
 
-<!-- Gesamtzeit -->
+            color: #E2F100;
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
 
-| Abschnitt              |           Zeit | reale Zeit  |
-| ---------------------- | -------------: | ---------:  |
-| 3.1 Bestandsaufnahme   |          30 Min|  27 Min     |
-| 3.2 Bilder             |         150 Min| 105 Min     | + UI - Section Studio 
-| 3.3 Branding           |          1,0 h |             |
-| 3.4 Typografie         |          1,0 h |             |
-| 3.5 Layout-Feinschliff |          1,5 h |             |
-| 3.6 Interaktionen      |          1,5 h |             |
-| 3.7 Responsive         |          1,0 h |             |
-| 3.8 Performance        |          1,0 h |             |
-| 3.9 Abschlussprüfung   |          0,5 h |             |
-| **Gesamt**             |         10,5 h |             |
+        h1 {
+            margin: 0 0 20px;
 
-<!-- Realistischer Zeitplan -->
+            color: #F8F9FA;
+            font-size: 3.5rem;
+            line-height: 1.1;
+        }
 
-1. Optik
-> Bestandsaufnahme → Bilder → Branding
+        .intro {
+            margin: 0;
 
-2. Design
-> Typografie → Abstände → Layout
+            color: #F4F5F7;
+            font-size: 1.125rem;
+        }
 
-3. UX
-> Interaktionen → Animationen → Responsive Polish
+        .timeline {
+            position: relative;
+        }
 
-4 Qualität
-> Performance → Bereinigung → kompletter Qualitätstest → Phase-3-Abschluss
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 28px;
+
+            width: 2px;
+
+            background-color: #3A3A3A;
+        }
+
+        .milestone {
+            position: relative;
+
+            display: grid;
+            grid-template-columns: 58px 1fr;
+            gap: 30px;
+
+            margin-bottom: 35px;
+        }
+
+        .milestone:last-child {
+            margin-bottom: 0;
+        }
+
+        .milestone-marker {
+            position: relative;
+            z-index: 1;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 58px;
+            height: 58px;
+
+            background-color: #E2F100;
+            color: #1A1A1A;
+
+            border: 6px solid #1A1A1A;
+            border-radius: 50%;
+
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .milestone-card {
+            padding: 30px 35px;
+
+            background-color: #2D2D2D;
+            border: 1px solid #3A3A3A;
+            border-radius: 12px;
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .milestone-card:hover {
+            transform: translateX(4px);
+            border-color: #E2F100;
+        }
+
+        .milestone-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+
+            margin-bottom: 12px;
+        }
+
+        .milestone-card h2 {
+            margin: 0;
+
+            color: #F8F9FA;
+            font-size: 1.625rem;
+            line-height: 1.2;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 5px 11px;
+
+            border: 1px solid #3A3A3A;
+            border-radius: 999px;
+
+            color: #E2F100;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .milestone-card > p {
+            margin: 0 0 20px;
+            color: #F4F5F7;
+        }
+
+        .milestone-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid #3A3A3A;
+        }
+
+        .detail h3 {
+            margin: 0 0 7px;
+
+            color: #E2F100;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .detail p {
+            margin: 0;
+            color: #F4F5F7;
+            font-size: 0.95rem;
+        }
+
+        .release {
+            margin-top: 80px;
+            padding: 40px;
+
+            background-color: #1A1A1A;
+            border: 1px solid #3A3A3A;
+            border-radius: 12px;
+        }
+
+        .release h2 {
+            margin: 0 0 15px;
+
+            color: #F8F9FA;
+            font-size: 2rem;
+        }
+
+        .release p {
+            max-width: 750px;
+            margin: 0;
+
+            color: #F4F5F7;
+        }
+
+        .release strong {
+            color: #E2F100;
+        }
+
+        footer {
+            padding: 30px 40px;
+
+            border-top: 1px solid #2D2D2D;
+
+            color: #9A9A9A;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 900px) {
+            header {
+                padding: 20px;
+            }
+
+            main {
+                padding: 80px 30px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            header {
+                position: relative;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                justify-content: flex-start;
+                gap: 12px 18px;
+            }
+
+            main {
+                padding: 60px 20px;
+            }
+
+            h1 {
+                font-size: 2.625rem;
+            }
+
+            .milestone {
+                grid-template-columns: 42px 1fr;
+                gap: 15px;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .milestone-marker {
+                width: 42px;
+                height: 42px;
+                border-width: 4px;
+                font-size: 0.65rem;
+            }
+
+            .milestone-card {
+                padding: 25px;
+            }
+
+            .milestone-top {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .milestone-details {
+                grid-template-columns: 1fr;
+            }
+
+            .release {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            h1 {
+                font-size: 2.25rem;
+            }
+
+            nav {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a class="logo" href="../index.html">
+            KIEZFIT<sub>&copy;</sub>
+        </a>
+
+        <nav aria-label="Dokumentationsnavigation">
+            <a href="roadmap.html">Roadmap</a>
+            <a href="progress.html">Progress</a>
+            <a href="design.html">Design</a>
+            <a href="technical.html">Technical</a>
+            <a href="decisions.html">Decisions</a>
+            <a href="issues.html">Issues</a>
+            <a class="active" href="milestones.html">Milestones</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="page-header">
+            <p class="eyebrow">Dokumentation · Entwicklungsabschnitte</p>
+
+            <h1>Milestones</h1>
+
+            <p class="intro">
+                Die Entwicklung von KIEZFIT wurde in klar abgegrenzte
+                Entwicklungsabschnitte unterteilt. Jeder Milestone bündelt
+                thematisch zusammengehörige Aufgaben und führt schrittweise
+                zum ersten stabilen Projektstand.
+            </p>
+        </section>
+
+        <section class="timeline">
+
+            <article class="milestone">
+
+                <div class="milestone-marker">
+                    01
+                </div>
+
+                <div class="milestone-card">
+
+                    <div class="milestone-top">
+                        <h2>Projektgrundlage</h2>
+                        <span class="status">Abgeschlossen</span>
+                    </div>
+
+                    <p>
+                        Aufbau der grundlegenden Projektstruktur und Einrichtung
+                        der technischen Basis für die weitere Entwicklung.
+                    </p>
+
+                    <div class="milestone-details">
+
+                        <div class="detail">
+                            <h3>Ziel</h3>
+                            <p>
+                                Eine saubere und versionierbare Ausgangsbasis
+                                schaffen.
+                            </p>
+                        </div>
+
+                        <div class="detail">
+                            <h3>Ergebnis</h3>
+                            <p>
+                                HTML-, CSS-, JavaScript-, Asset- und
+                                Git-Struktur stehen.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <article class="milestone">
+
+                <div class="milestone-marker">
+                    02
+                </div>
+
+                <div class="milestone-card">
+
+                    <div class="milestone-top">
+                        <h2>JavaScript & Interaktion</h2>
+                        <span class="status">Abgeschlossen</span>
+                    </div>
+
+                    <p>
+                        Umsetzung und anschließende Bereinigung der für die
+                        Landingpage benötigten JavaScript-Funktionen.
+                    </p>
+
+                    <div class="milestone-details">
+
+                        <div class="detail">
+                            <h3>Ziel</h3>
+                            <p>
+                                Eine funktionierende Navigation und sinnvolle
+                                Seiteninteraktionen schaffen.
+                            </p>
+                        </div>
+
+                        <div class="detail">
+                            <h3>Ergebnis</h3>
+                            <p>
+                                Scroll-Navigation und mobiles Hamburger-Menü
+                                funktionieren.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <article class="milestone">
+
+                <div class="milestone-marker">
+                    03
+                </div>
+
+                <div class="milestone-card">
+
+                    <div class="milestone-top">
+                        <h2>Design & UX</h2>
+                        <span class="status">Abgeschlossen</span>
+                    </div>
+
+                    <p>
+                        Entwicklung und Vereinheitlichung des visuellen Systems
+                        sowie der zentralen Komponenten der Website.
+                    </p>
+
+                    <div class="milestone-details">
+
+                        <div class="detail">
+                            <h3>Ziel</h3>
+                            <p>
+                                Eine eigenständige und konsistente
+                                KIEZFIT-Gestaltung entwickeln.
+                            </p>
+                        </div>
+
+                        <div class="detail">
+                            <h3>Ergebnis</h3>
+                            <p>
+                                Farb-, Typografie-, Karten- und Button-System
+                                sowie die Studio-Landkarte sind umgesetzt.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <article class="milestone">
+
+                <div class="milestone-marker">
+                    04
+                </div>
+
+                <div class="milestone-card">
+
+                    <div class="milestone-top">
+                        <h2>Responsive Design</h2>
+                        <span class="status">Abgeschlossen</span>
+                    </div>
+
+                    <p>
+                        Anpassung der Website an unterschiedliche
+                        Bildschirmgrößen und mobile Nutzungssituationen.
+                    </p>
+
+                    <div class="milestone-details">
+
+                        <div class="detail">
+                            <h3>Ziel</h3>
+                            <p>
+                                Die Website auf Desktop, Tablet und Smartphone
+                                sinnvoll nutzbar machen.
+                            </p>
+                        </div>
+
+                        <div class="detail">
+                            <h3>Ergebnis</h3>
+                            <p>
+                                Responsive Grids, mobile Navigation und
+                                angepasste Komponenten sind vorhanden.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <article class="milestone">
+
+                <div class="milestone-marker">
+                    05
+                </div>
+
+                <div class="milestone-card">
+
+                    <div class="milestone-top">
+                        <h2>Quality & Testing</h2>
+                        <span class="status">Abgeschlossen</span>
+                    </div>
+
+                    <p>
+                        Technische Bereinigung, Asset-Optimierung sowie
+                        Browser- und Funktionstests vor dem Release.
+                    </p>
+
+                    <div class="milestone-details">
+
+                        <div class="detail">
+                            <h3>Ziel</h3>
+                            <p>
+                                Die bestehende Umsetzung auf Stabilität,
+                                Struktur und Qualität prüfen.
+                            </p>
+                        </div>
+
+                        <div class="detail">
+                            <h3>Ergebnis</h3>
+                            <p>
+                                JavaScript und Assets wurden bereinigt,
+                                Tests durchgeführt und das Repository geprüft.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <article class="milestone">
+
+                <div class="milestone-marker">
+                    06
+                </div>
+
+                <div class="milestone-card">
+
+                    <div class="milestone-top">
+                        <h2>Documentation & Release</h2>
+                        <span class="status">In Arbeit</span>
+                    </div>
+
+                    <p>
+                        Abschluss der Projektdokumentation und Vorbereitung
+                        des ersten veröffentlichten Versionsstands.
+                    </p>
+
+                    <div class="milestone-details">
+
+                        <div class="detail">
+                            <h3>Ziel</h3>
+                            <p>
+                                Version 0.1.0 vollständig dokumentieren und
+                                veröffentlichungsbereit machen.
+                            </p>
+                        </div>
+
+                        <div class="detail">
+                            <h3>Aufgaben</h3>
+                            <p>
+                                Dokumentation, README, Live-Demo, Repository,
+                                Release und finaler Portfolio-Check.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+        <section class="release">
+
+            <h2>Version 0.1.0</h2>
+
+            <p>
+                Die Milestones <strong>01 bis 05</strong> bilden die technische
+                und gestalterische Grundlage des Projekts. Mit Milestone
+                <strong>06</strong> wird diese Grundlage dokumentiert und als
+                erster definierter Projektstand veröffentlicht.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        KIEZFIT · Projektdokumentation · Version 0.1.0
+    </footer>
+
+</body>
+
+</html>
+```

@@ -1,37 +1,838 @@
-<!-- KIEZFIT -->
-<!-- PHASE 3 – VISUELLES DESIGN & UX -->
+<!DOCTYPE html>
 
-<!-- DESIGN SYSTEM -->
+<html lang="de">
 
-<!-- 1. FARBEN -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- 2. TYPOGRAFIE -->
+```
+<title>KIEZFIT – Design</title>
 
-<!-- 3. ABSTÄNDE -->
+<style>
+    :root {
+        --color-carbon: #1A1A1A;
+        --color-off-white: #F4F5F7;
+        --color-lime: #E2F100;
+        --color-graphite: #2D2D2D;
+        --color-white: #F8F9FA;
+        --color-border: #3A3A3A;
 
-<!-- 4. SECTION-AUFBAU -->
+        --content-width: 1000px;
 
-<!-- 5. SCHATTEN & VISUELLE TIEFE -->
+        --space-sm: 10px;
+        --space-md: 15px;
+        --space-lg: 20px;
+        --space-xl: 30px;
+        --space-2xl: 40px;
+        --space-3xl: 50px;
+        --space-4xl: 60px;
+        --space-5xl: 80px;
+        --space-6xl: 100px;
+    }
 
-<!-- 6. ÜBERGÄNGE -->
+    * {
+        box-sizing: border-box;
+    }
 
-<!-- 7. HOVER-EFFEKTE -->
+    html {
+        scroll-behavior: smooth;
+    }
 
-<!-- 8. ANIMATIONEN -->
+    body {
+        margin: 0;
 
-<!-- 9. RESPONSIVE DESIGN -->
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
 
-<!-- 10. MOBILE -->
+        background-color: var(--color-carbon);
+        color: var(--color-off-white);
+    }
 
-<!-- 11. VISUELLE KONSISTENZ -->
+    a {
+        color: var(--color-lime);
+        text-decoration: none;
+    }
 
-<!-- 12. ACCESSIBILITY -->
+    a:hover {
+        text-decoration: underline;
+    }
 
+    header {
+        padding: var(--space-lg) var(--space-2xl);
+        border-bottom: 1px solid var(--color-graphite);
+    }
 
-<!-- DESIGN-ENTSCHEIDUNGEN -->
+    .header-content {
+        max-width: var(--content-width);
+        margin: 0 auto;
 
-<!--
-Hier werden finale Entscheidungen dokumentiert,
-damit das Design während der weiteren Entwicklung
-konsistent bleibt.
--->
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: var(--space-xl);
+    }
+
+    .logo {
+        color: var(--color-lime);
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-lg);
+    }
+
+    nav a {
+        color: var(--color-off-white);
+        font-size: 0.9rem;
+    }
+
+    nav a:hover {
+        color: var(--color-lime);
+    }
+
+    main {
+        max-width: var(--content-width);
+        margin: 0 auto;
+        padding: var(--space-5xl) var(--space-2xl);
+    }
+
+    .page-header {
+        margin-bottom: var(--space-5xl);
+    }
+
+    .page-label {
+        margin: 0 0 var(--space-md);
+
+        color: var(--color-lime);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+
+    h1 {
+        margin: 0 0 var(--space-lg);
+
+        color: var(--color-white);
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        line-height: 1.1;
+    }
+
+    .intro {
+        max-width: 750px;
+        margin: 0;
+        font-size: 1.1rem;
+    }
+
+    .design-section {
+        margin-bottom: var(--space-5xl);
+    }
+
+    .design-section:last-child {
+        margin-bottom: 0;
+    }
+
+    .design-section h2 {
+        margin: 0 0 var(--space-xl);
+
+        color: var(--color-white);
+        font-size: 1.8rem;
+    }
+
+    .design-section > p {
+        max-width: 750px;
+        margin-top: 0;
+    }
+
+    .color-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-md);
+    }
+
+    .color-card {
+        overflow: hidden;
+
+        background-color: var(--color-graphite);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+    }
+
+    .color-preview {
+        height: 80px;
+    }
+
+    .color-carbon {
+        background-color: #1A1A1A;
+    }
+
+    .color-off-white {
+        background-color: #F4F5F7;
+    }
+
+    .color-lime {
+        background-color: #E2F100;
+    }
+
+    .color-graphite {
+        background-color: #2D2D2D;
+    }
+
+    .color-white {
+        background-color: #F8F9FA;
+    }
+
+    .color-border {
+        background-color: #3A3A3A;
+    }
+
+    .color-info {
+        padding: var(--space-md);
+    }
+
+    .color-info strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--color-white);
+    }
+
+    .color-info span {
+        color: #C8CDD1;
+        font-size: 0.85rem;
+    }
+
+    .type-list {
+        display: grid;
+        gap: var(--space-md);
+    }
+
+    .type-item {
+        padding: var(--space-xl);
+
+        background-color: var(--color-graphite);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+    }
+
+    .type-item h3 {
+        margin: 0 0 var(--space-sm);
+        color: var(--color-white);
+    }
+
+    .type-h1 {
+        font-size: 4rem;
+        line-height: 1.1;
+    }
+
+    .type-h2 {
+        font-size: 2.625rem;
+        line-height: 1.2;
+    }
+
+    .type-h3 {
+        font-size: 1.625rem;
+    }
+
+    .type-body {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .type-meta {
+        margin: 0;
+        color: #C8CDD1;
+        font-size: 0.85rem;
+    }
+
+    .spacing-list {
+        display: grid;
+        gap: var(--space-sm);
+    }
+
+    .spacing-item {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        align-items: center;
+        gap: var(--space-lg);
+    }
+
+    .spacing-bar {
+        height: 12px;
+        background-color: var(--color-lime);
+    }
+
+    .spacing-label {
+        color: #C8CDD1;
+        font-size: 0.9rem;
+    }
+
+    .component-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+    }
+
+    .component-card {
+        padding: var(--space-xl);
+
+        background-color: var(--color-graphite);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+    }
+
+    .component-card h3 {
+        margin-top: 0;
+        color: var(--color-white);
+    }
+
+    .component-card p {
+        margin-bottom: 0;
+    }
+
+    .button-demo {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-md);
+        margin-top: var(--space-lg);
+    }
+
+    .demo-button {
+        display: inline-block;
+        padding: 12px 24px;
+
+        border: 1px solid var(--color-off-white);
+        border-radius: 6px;
+
+        color: var(--color-off-white);
+        font-weight: 700;
+    }
+
+    .demo-button.primary {
+        background-color: var(--color-lime);
+        border-color: var(--color-lime);
+        color: var(--color-carbon);
+    }
+
+    .demo-button.secondary {
+        background-color: transparent;
+    }
+
+    .demo-button.login {
+        background-color: var(--color-lime);
+        border-color: var(--color-lime);
+        color: var(--color-carbon);
+    }
+
+    .section-list {
+        display: grid;
+        gap: var(--space-md);
+    }
+
+    .section-item {
+        padding: var(--space-xl);
+
+        background-color: var(--color-graphite);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+    }
+
+    .section-item h3 {
+        margin: 0 0 var(--space-sm);
+        color: var(--color-white);
+    }
+
+    .section-item p {
+        margin: 0;
+    }
+
+    .principles {
+        padding: var(--space-2xl);
+
+        background-color: var(--color-graphite);
+        border-left: 3px solid var(--color-lime);
+    }
+
+    .principles h2 {
+        margin-top: 0;
+        color: var(--color-white);
+    }
+
+    .principles ul {
+        margin-bottom: 0;
+    }
+
+    footer {
+        padding: var(--space-2xl);
+
+        border-top: 1px solid var(--color-graphite);
+
+        text-align: center;
+
+        color: #AEB3B7;
+        font-size: 0.85rem;
+    }
+
+    @media (max-width: 700px) {
+        header {
+            padding: var(--space-lg) var(--space-md);
+        }
+
+        .header-content {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        nav {
+            gap: var(--space-md);
+        }
+
+        main {
+            padding: var(--space-4xl) var(--space-lg);
+        }
+
+        .color-grid,
+        .component-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .spacing-item {
+            grid-template-columns: 60px 1fr;
+        }
+    }
+
+    @media (max-width: 450px) {
+        main {
+            padding: var(--space-3xl) var(--space-md);
+        }
+
+        .type-h1 {
+            font-size: 2.5rem;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<header>
+    <div class="header-content">
+
+        <a class="logo" href="../index.html">
+            KIEZFIT
+        </a>
+
+        <nav aria-label="Dokumentationsnavigation">
+            <a href="roadmap.html">Roadmap</a>
+            <a href="progress.html">Progress</a>
+            <a href="design.html">Design</a>
+            <a href="technical.html">Technical</a>
+            <a href="decisions.html">Decisions</a>
+            <a href="issues.html">Issues</a>
+            <a href="milestones.html">Milestones</a>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+
+    <section class="page-header">
+
+        <p class="page-label">KIEZFIT · Gestaltung</p>
+
+        <h1>Design</h1>
+
+        <p class="intro">
+            Das KIEZFIT-Design verbindet eine dunkle, kontrastreiche
+            Fitnessästhetik mit klaren Strukturen und einem auffälligen
+            Lime-Akzent. Das Designsystem soll Energie und Dynamik vermitteln,
+            gleichzeitig aber eine übersichtliche und gut bedienbare
+            Benutzeroberfläche schaffen.
+        </p>
+
+    </section>
+
+    <section class="design-section">
+
+        <h2>Farbwelt</h2>
+
+        <p>
+            Die Farbpalette basiert auf dunklen Grundflächen, hellen
+            Textfarben und einem einzelnen kräftigen Akzent. Dadurch entsteht
+            eine klare visuelle Hierarchie.
+        </p>
+
+        <div class="color-grid">
+
+            <article class="color-card">
+                <div class="color-preview color-carbon"></div>
+                <div class="color-info">
+                    <strong>Carbon</strong>
+                    <span>#1A1A1A · Haupt-Hintergrund</span>
+                </div>
+            </article>
+
+            <article class="color-card">
+                <div class="color-preview color-off-white"></div>
+                <div class="color-info">
+                    <strong>Off-White</strong>
+                    <span>#F4F5F7 · Haupttext</span>
+                </div>
+            </article>
+
+            <article class="color-card">
+                <div class="color-preview color-lime"></div>
+                <div class="color-info">
+                    <strong>Lime</strong>
+                    <span>#E2F100 · Akzent und Aktionen</span>
+                </div>
+            </article>
+
+            <article class="color-card">
+                <div class="color-preview color-graphite"></div>
+                <div class="color-info">
+                    <strong>Graphite</strong>
+                    <span>#2D2D2D · Karten und Flächen</span>
+                </div>
+            </article>
+
+            <article class="color-card">
+                <div class="color-preview color-white"></div>
+                <div class="color-info">
+                    <strong>White</strong>
+                    <span>#F8F9FA · Überschriften und Hervorhebungen</span>
+                </div>
+            </article>
+
+            <article class="color-card">
+                <div class="color-preview color-border"></div>
+                <div class="color-info">
+                    <strong>Border</strong>
+                    <span>#3A3A3A · Abgrenzungen</span>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="design-section">
+
+        <h2>Typografie</h2>
+
+        <p>
+            KIEZFIT verwendet bewusst eine einfache, systemnahe
+            Typografie mit Arial als Basisschrift. Die Hierarchie entsteht
+            hauptsächlich über Schriftgröße, Gewicht und Zeilenhöhe.
+        </p>
+
+        <div class="type-list">
+
+            <article class="type-item">
+                <h3 class="type-h1">Heading 1</h3>
+                <p class="type-meta">4rem · 700 · line-height 1.1</p>
+            </article>
+
+            <article class="type-item">
+                <h3 class="type-h2">Heading 2</h3>
+                <p class="type-meta">2.625rem · 700 · line-height 1.2</p>
+            </article>
+
+            <article class="type-item">
+                <h3 class="type-h3">Heading 3</h3>
+                <p class="type-meta">1.625rem · 700</p>
+            </article>
+
+            <article class="type-item">
+                <h3 class="type-body">Body Text</h3>
+                <p class="type-meta">1rem · 400 · line-height 1.6</p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="design-section">
+
+        <h2>Spacing-System</h2>
+
+        <p>
+            Abstände werden über zentrale CSS-Variablen definiert. Dadurch
+            können Layoutbereiche und Komponenten konsistent aufgebaut und
+            später einfacher angepasst werden.
+        </p>
+
+        <div class="spacing-list">
+
+            <div class="spacing-item">
+                <div class="spacing-bar" style="width: 5px;"></div>
+                <span class="spacing-label">XS · 5px</span>
+            </div>
+
+            <div class="spacing-item">
+                <div class="spacing-bar" style="width: 10px;"></div>
+                <span class="spacing-label">SM · 10px</span>
+            </div>
+
+            <div class="spacing-item">
+                <div class="spacing-bar" style="width: 15px;"></div>
+                <span class="spacing-label">MD · 15px</span>
+            </div>
+
+            <div class="spacing-item">
+                <div class="spacing-bar" style="width: 20px;"></div>
+                <span class="spacing-label">LG · 20px</span>
+            </div>
+
+            <div class="spacing-item">
+                <div class="spacing-bar" style="width: 30px;"></div>
+                <span class="spacing-label">XL · 30px</span>
+            </div>
+
+            <div class="spacing-item">
+                <div class="spacing-bar" style="width: 40px;"></div>
+                <span class="spacing-label">2XL · 40px</span>
+            </div>
+
+            <div class="spacing-item">
+                <div class="spacing-bar" style="width: 50px;"></div>
+                <span class="spacing-label">3XL · 50px</span>
+            </div>
+
+            <div class="spacing-item">
+                <div class="spacing-bar" style="width: 60px;"></div>
+                <span class="spacing-label">4XL · 60px</span>
+            </div>
+
+            <div class="spacing-item">
+                <div class="spacing-bar" style="width: 80px;"></div>
+                <span class="spacing-label">5XL · 80px</span>
+            </div>
+
+            <div class="spacing-item">
+                <div class="spacing-bar" style="width: 100px;"></div>
+                <span class="spacing-label">6XL · 100px</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="design-section">
+
+        <h2>Komponenten</h2>
+
+        <div class="component-grid">
+
+            <article class="component-card">
+
+                <h3>Cards</h3>
+
+                <p>
+                    Cards werden für Leistungen, Kurse, Mitgliedschaften
+                    und Kontaktinformationen eingesetzt. Sie verwenden
+                    dunkle Flächen, dezente Rahmen und abgerundete Ecken.
+                    Hover-Zustände erzeugen eine leichte Bewegung und
+                    betonen den Lime-Akzent.
+                </p>
+
+            </article>
+
+            <article class="component-card">
+
+                <h3>Buttons</h3>
+
+                <p>
+                    Primäre Aktionen verwenden Lime als Hintergrund.
+                    Sekundäre Aktionen bleiben transparent und verwenden
+                    einen hellen Rahmen. Interaktive Zustände werden durch
+                    Hover-, Active- und Focus-Zustände visualisiert.
+                </p>
+
+                <div class="button-demo">
+                    <span class="demo-button primary">Primary</span>
+                    <span class="demo-button secondary">Secondary</span>
+                    <span class="demo-button login">Login</span>
+                </div>
+
+            </article>
+
+            <article class="component-card">
+
+                <h3>Navigation</h3>
+
+                <p>
+                    Die Desktop-Navigation ist horizontal aufgebaut.
+                    Auf kleineren Bildschirmen wird sie durch ein
+                    Hamburger-Menü ersetzt. Die mobile Navigation wird
+                    animiert ein- und ausgeblendet.
+                </p>
+
+            </article>
+
+            <article class="component-card">
+
+                <h3>Interaktionen</h3>
+
+                <p>
+                    Hover-Effekte, Focus-Zustände, Active-Zustände,
+                    Smooth Scrolling und animierte Navigation sorgen für
+                    unmittelbares Feedback bei der Bedienung.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="design-section">
+
+        <h2>Seitenaufbau</h2>
+
+        <div class="section-list">
+
+            <article class="section-item">
+                <h3>Hero</h3>
+                <p>
+                    Großflächiger Einstieg mit Hintergrundbild,
+                    abgedunkeltem Content-Bereich, zentraler Botschaft
+                    und klaren Call-to-Action-Elementen.
+                </p>
+            </article>
+
+            <article class="section-item">
+                <h3>Studio</h3>
+                <p>
+                    Eine individuelle Studio-Landkarte stellt Ausstattung,
+                    Community, Atmosphäre und Betreuung rund um das
+                    zentrale KIEZFIT-Element dar.
+                </p>
+            </article>
+
+            <article class="section-item">
+                <h3>Leistungen</h3>
+                <p>
+                    Ein Grid aus sechs Leistungs-Cards stellt das
+                    Angebot des Studios übersichtlich dar.
+                </p>
+            </article>
+
+            <article class="section-item">
+                <h3>Kurse</h3>
+                <p>
+                    Kurs-Cards zeigen Kursname, Termin, Trainer und
+                    weiterführende Aktion.
+                </p>
+            </article>
+
+            <article class="section-item">
+                <h3>Mitgliedschaften</h3>
+                <p>
+                    Drei Mitgliedschaftsmodelle werden nebeneinander
+                    dargestellt. Das mittlere Modell wird als besonders
+                    empfehlenswert hervorgehoben.
+                </p>
+            </article>
+
+            <article class="section-item">
+                <h3>Kontakt</h3>
+                <p>
+                    Kontaktinformationen, Adresse, Erreichbarkeit und
+                    Öffnungszeiten werden in einzelnen Cards dargestellt.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="design-section">
+
+        <h2>Responsive Design</h2>
+
+        <p>
+            Das Layout passt sich schrittweise an unterschiedliche
+            Bildschirmgrößen an. Abhängig von der verfügbaren Breite
+            werden Grids reduziert, Navigationselemente verändert und
+            Inhalte untereinander angeordnet.
+        </p>
+
+        <div class="section-list">
+
+            <article class="section-item">
+                <h3>Desktop</h3>
+                <p>
+                    Mehrspaltige Layouts und vollständige horizontale
+                    Navigation.
+                </p>
+            </article>
+
+            <article class="section-item">
+                <h3>Tablet · bis 900px</h3>
+                <p>
+                    Reduzierte Grid-Spalten, angepasste Navigation und
+                    kleinere Überschriften.
+                </p>
+            </article>
+
+            <article class="section-item">
+                <h3>Mobile · bis 700px</h3>
+                <p>
+                    Hamburger-Navigation und angepasste Header-Struktur.
+                </p>
+            </article>
+
+            <article class="section-item">
+                <h3>Kleine Mobile Geräte · bis 600px</h3>
+                <p>
+                    Einspaltige Layouts, vertikale Buttons und
+                    angepasste Typografie.
+                </p>
+            </article>
+
+            <article class="section-item">
+                <h3>Sehr kleine Geräte · bis 350px</h3>
+                <p>
+                    Zusätzliche Anpassungen für Karten und Überschriften.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="principles">
+
+        <h2>Gestaltungsprinzipien</h2>
+
+        <ul>
+            <li>Dark-first und kontrastreiche Gestaltung</li>
+            <li>Lime als gezielter visueller Akzent</li>
+            <li>klare visuelle Hierarchie</li>
+            <li>konsistente Abstände und Komponenten</li>
+            <li>sichtbares Feedback bei Interaktionen</li>
+            <li>Responsive Design als grundlegender Bestandteil</li>
+            <li>Fokus auf Übersichtlichkeit und Bedienbarkeit</li>
+        </ul>
+
+    </section>
+
+</main>
+
+<footer>
+    KIEZFIT · Projektdokumentation · Design
+</footer>
+```
+
+</body>
+
+</html>

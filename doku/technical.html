@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>KIEZFIT – Technical</title>
+
+<style>
+    :root {
+        --color-carbon: #1A1A1A;
+        --color-off-white: #F4F5F7;
+        --color-lime: #E2F100;
+        --color-graphite: #2D2D2D;
+        --color-white: #F8F9FA;
+        --color-border: #3A3A3A;
+
+        --content-width: 1000px;
+
+        --space-sm: 10px;
+        --space-md: 15px;
+        --space-lg: 20px;
+        --space-xl: 30px;
+        --space-2xl: 40px;
+        --space-3xl: 50px;
+        --space-4xl: 60px;
+        --space-5xl: 80px;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+
+        background-color: var(--color-carbon);
+        color: var(--color-off-white);
+    }
+
+    a {
+        color: var(--color-lime);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    header {
+        padding: var(--space-lg) var(--space-2xl);
+        border-bottom: 1px solid var(--color-graphite);
+    }
+
+    .header-content {
+        max-width: var(--content-width);
+        margin: 0 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: var(--space-xl);
+    }
+
+    .logo {
+        color: var(--color-lime);
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-lg);
+    }
+
+    nav a {
+        color: var(--color-off-white);
+        font-size: 0.9rem;
+    }
+
+    nav a:hover {
+        color: var(--color-lime);
+    }
+
+    main {
+        max-width: var(--content-width);
+        margin: 0 auto;
+        padding: var(--space-5xl) var(--space-2xl);
+    }
+
+    .page-header {
+        margin-bottom: var(--space-5xl);
+    }
+
+    .page-label {
+        margin: 0 0 var(--space-md);
+
+        color: var(--color-lime);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+
+    h1 {
+        margin: 0 0 var(--space-lg);
+
+        color: var(--color-white);
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        line-height: 1.1;
+    }
+
+    .intro {
+        max-width: 750px;
+        margin: 0;
+
+        font-size: 1.1rem;
+    }
+
+    .technical-section {
+        margin-bottom: var(--space-5xl);
+    }
+
+    .technical-section:last-child {
+        margin-bottom: 0;
+    }
+
+    .technical-section h2 {
+        margin: 0 0 var(--space-xl);
+
+        color: var(--color-white);
+        font-size: 1.8rem;
+    }
+
+    .technical-section > p {
+        max-width: 750px;
+        margin-top: 0;
+    }
+
+    .file-tree {
+        margin: 0;
+        padding: var(--space-xl);
+
+        overflow-x: auto;
+
+        background-color: var(--color-graphite);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+
+        color: var(--color-off-white);
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .architecture-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+    }
+
+    .architecture-card {
+        padding: var(--space-xl);
+
+        background-color: var(--color-graphite);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+    }
+
+    .architecture-card h3 {
+        margin: 0 0 var(--space-sm);
+
+        color: var(--color-white);
+        font-size: 1.2rem;
+    }
+
+    .architecture-card p {
+        margin: 0;
+    }
+
+    .architecture-card ul {
+        margin-bottom: 0;
+        padding-left: 20px;
+    }
+
+    .code-block {
+        margin: 0;
+
+        padding: var(--space-xl);
+
+        overflow-x: auto;
+
+        background-color: #111;
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+
+        color: var(--color-off-white);
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    .breakpoint-list,
+    .asset-list {
+        display: grid;
+        gap: var(--space-md);
+    }
+
+    .breakpoint,
+    .asset {
+        padding: var(--space-xl);
+
+        background-color: var(--color-graphite);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+    }
+
+    .breakpoint h3,
+    .asset h3 {
+        margin: 0 0 var(--space-sm);
+
+        color: var(--color-white);
+    }
+
+    .breakpoint p,
+    .asset p {
+        margin: 0;
+    }
+
+    .note {
+        margin-top: var(--space-xl);
+        padding: var(--space-xl);
+
+        background-color: var(--color-graphite);
+        border-left: 3px solid var(--color-lime);
+    }
+
+    .note h3 {
+        margin-top: 0;
+        color: var(--color-white);
+    }
+
+    .note p {
+        margin-bottom: 0;
+    }
+
+    footer {
+        padding: var(--space-2xl);
+
+        border-top: 1px solid var(--color-graphite);
+
+        text-align: center;
+
+        color: #AEB3B7;
+        font-size: 0.85rem;
+    }
+
+    @media (max-width: 700px) {
+        header {
+            padding: var(--space-lg) var(--space-md);
+        }
+
+        .header-content {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        nav {
+            gap: var(--space-md);
+        }
+
+        main {
+            padding: var(--space-4xl) var(--space-lg);
+        }
+
+        .architecture-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 450px) {
+        main {
+            padding: var(--space-3xl) var(--space-md);
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<header>
+    <div class="header-content">
+
+        <a class="logo" href="../index.html">
+            KIEZFIT
+        </a>
+
+        <nav aria-label="Dokumentationsnavigation">
+            <a href="roadmap.html">Roadmap</a>
+            <a href="progress.html">Progress</a>
+            <a href="design.html">Design</a>
+            <a href="technical.html">Technical</a>
+            <a href="decisions.html">Decisions</a>
+            <a href="issues.html">Issues</a>
+            <a href="milestones.html">Milestones</a>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+
+    <section class="page-header">
+
+        <p class="page-label">KIEZFIT · Technik</p>
+
+        <h1>Technical</h1>
+
+        <p class="intro">
+            Die technische Dokumentation beschreibt den Aufbau von KIEZFIT
+            in Version 0.1.0. Das Projekt basiert auf einer klassischen
+            Frontend-Struktur mit HTML, modular aufgebautem CSS und
+            JavaScript für interaktive Funktionen.
+        </p>
+
+    </section>
+
+    <section class="technical-section">
+
+        <h2>Projektstruktur</h2>
+
+        <p>
+            Die Projektstruktur trennt Dokumentation, Stylesheets,
+            JavaScript, Bilder und zukünftige Seiten voneinander.
+        </p>
+
+        <pre class="file-tree">KIEZFIT/
+```
+
+├── index.html
+├── login.html
+├── README.md
+├── CHANGELOG.md
+├── .gitignore
+│
+├── assets/
+│   ├── icons/
+│   └── images/
+│       ├── hero.webp
+│       ├── kiezfit-preview.webp
+│       └── studio.webp
+│
+├── css/
+│   ├── base.css
+│   ├── layout.css
+│   ├── components.css
+│   ├── responsive.css
+│   └── sections.css
+│
+├── js/
+│   └── script.js
+│
+├── doku/
+│   ├── roadmap.html
+│   ├── progress.html
+│   ├── design.html
+│   ├── technical.html
+│   ├── decisions.html
+│   ├── issues.html
+│   └── milestones.html
+│
+└── pages/
+├── challenges.html
+├── dashboard.html
+├── ernaehrung.html
+├── fortschritt.html
+├── kurse.html
+├── mitgliedschaft.html
+├── nachrichten.html
+├── profil.html
+├── register.html
+├── studio.html
+├── training.html
+└── trainingsplaene.html</pre>
+
+```
+    </section>
+
+    <section class="technical-section">
+
+        <h2>HTML-Architektur</h2>
+
+        <div class="architecture-grid">
+
+            <article class="architecture-card">
+                <h3>index.html</h3>
+                <p>
+                    Die Startseite bildet die zentrale öffentliche
+                    KIEZFIT-Landingpage. Sie enthält Header, Navigation,
+                    Hero, Studio, Leistungen, Kurse, Mitgliedschaften,
+                    Kontakt und Footer.
+                </p>
+            </article>
+
+            <article class="architecture-card">
+                <h3>Semantische Struktur</h3>
+                <p>
+                    Die Inhalte werden über semantische HTML5-Elemente
+                    wie <code>header</code>, <code>main</code>,
+                    <code>section</code>, <code>article</code> und
+                    <code>footer</code> strukturiert.
+                </p>
+            </article>
+
+            <article class="architecture-card">
+                <h3>Navigation</h3>
+                <p>
+                    Die Hauptnavigation verwendet interne Anker auf die
+                    einzelnen Bereiche der Landingpage. Der Login-Link
+                    verweist auf die vorbereitete <code>login.html</code>.
+                </p>
+            </article>
+
+            <article class="architecture-card">
+                <h3>Zukünftige Seiten</h3>
+                <p>
+                    Der Ordner <code>pages/</code> enthält vorbereitete
+                    Seiten für spätere Entwicklungsphasen. Diese Seiten
+                    sind Bestandteil der zukünftigen Erweiterung und
+                    nicht als vollständige Funktionen von 0.1.0 zu
+                    verstehen.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="technical-section">
+
+        <h2>CSS-Architektur</h2>
+
+        <p>
+            Die Stylesheets sind nach Verantwortungsbereichen getrennt.
+            Dadurch bleiben globale Regeln, Layout, Komponenten,
+            Sections und Responsive Anpassungen voneinander getrennt.
+        </p>
+
+        <div class="architecture-grid">
+
+            <article class="architecture-card">
+                <h3>base.css</h3>
+                <p>
+                    Globale Reset-Regeln, CSS-Variablen, Farben,
+                    Typografie, Spacing, Border-Radii, Border und
+                    Transition-Werte.
+                </p>
+            </article>
+
+            <article class="architecture-card">
+                <h3>layout.css</h3>
+                <p>
+                    Übergeordnete Layout-Regeln für Header, Sections
+                    und Footer.
+                </p>
+            </article>
+
+            <article class="architecture-card">
+                <h3>components.css</h3>
+                <p>
+                    Wiederverwendbare UI-Komponenten wie Logo,
+                    Navigation, Buttons, Hamburger-Menü und
+                    Scroll-Buttons.
+                </p>
+            </article>
+
+            <article class="architecture-card">
+                <h3>sections.css</h3>
+                <p>
+                    Spezifische Gestaltung der einzelnen Seitenbereiche,
+                    unter anderem Hero, Studio, Leistungen, Kurse,
+                    Mitgliedschaften und Kontakt.
+                </p>
+            </article>
+
+            <article class="architecture-card">
+                <h3>responsive.css</h3>
+                <p>
+                    Responsive Anpassungen für Tablet, Mobile und
+                    besonders kleine Bildschirmgrößen.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="technical-section">
+
+        <h2>CSS-Variablensystem</h2>
+
+        <p>
+            Zentrale Werte werden in <code>:root</code> definiert und
+            anschließend über CSS-Variablen wiederverwendet.
+            Dadurch werden wiederkehrende Werte zentral steuerbar.
+        </p>
+
+        <pre class="code-block">--container-max-width: 1200px;
+```
+
+--container-content-width: 750px;
+
+--color-carbon: #1A1A1A;
+--color-off-white: #F4F5F7;
+--color-lime: #E2F100;
+--color-graphite: #2D2D2D;
+--color-white: #F8F9FA;
+--color-border: #3A3A3A;
+
+--space-xs: 5px;
+--space-sm: 10px;
+--space-md: 15px;
+--space-lg: 20px;
+--space-xl: 30px;
+--space-2xl: 40px;
+--space-3xl: 50px;
+--space-4xl: 60px;
+--space-5xl: 80px;
+--space-6xl: 100px;</pre>
+
+```
+    </section>
+
+    <section class="technical-section">
+
+        <h2>JavaScript</h2>
+
+        <p>
+            Das JavaScript ist auf die interaktiven Funktionen der
+            Landingpage konzentriert. Es verändert nicht die grundlegende
+            Seitenstruktur, sondern steuert Navigation und Scroll-Verhalten.
+        </p>
+
+        <div class="architecture-grid">
+
+            <article class="architecture-card">
+                <h3>Scroll-Navigation</h3>
+                <p>
+                    Die aktuelle Section wird anhand der Scrollposition
+                    ermittelt. Über die Scroll-Buttons kann zur vorherigen
+                    oder nächsten Section navigiert werden.
+                </p>
+            </article>
+
+            <article class="architecture-card">
+                <h3>Smooth Scrolling</h3>
+                <p>
+                    Zielbereiche werden über
+                    <code>scrollIntoView()</code> mit einer weichen
+                    Scrollbewegung angesteuert.
+                </p>
+            </article>
+
+            <article class="architecture-card">
+                <h3>Scroll-Button-Status</h3>
+                <p>
+                    Die Buttons werden abhängig davon aktiviert oder
+                    deaktiviert, ob sich die Seite am oberen oder unteren
+                    Ende befindet.
+                </p>
+            </article>
+
+            <article class="architecture-card">
+                <h3>Hamburger-Menü</h3>
+                <p>
+                    Auf mobilen Geräten steuert JavaScript den geöffneten
+                    Zustand der Navigation und synchronisiert
+                    <code>aria-expanded</code>.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="technical-section">
+
+        <h2>Responsive Architektur</h2>
+
+        <p>
+            Die responsive Darstellung wird über Media Queries in
+            <code>responsive.css</code> gesteuert.
+        </p>
+
+        <div class="breakpoint-list">
+
+            <article class="breakpoint">
+                <h3>900px – Tablet</h3>
+                <p>
+                    Reduzierte Grid-Spalten, kleinere Navigation,
+                    angepasste Überschriften und kompaktere
+                    Header-Elemente.
+                </p>
+            </article>
+
+            <article class="breakpoint">
+                <h3>700px – Mobile Navigation</h3>
+                <p>
+                    Die horizontale Navigation wird durch ein
+                    Hamburger-Menü ersetzt.
+                </p>
+            </article>
+
+            <article class="breakpoint">
+                <h3>600px – Kleine Mobile Geräte</h3>
+                <p>
+                    Einspaltige Bereiche, vertikale Buttons und weitere
+                    Anpassungen an Typografie und Footer.
+                </p>
+            </article>
+
+            <article class="breakpoint">
+                <h3>350px – Sehr kleine Geräte</h3>
+                <p>
+                    Zusätzliche Anpassungen für Karten und Überschriften.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="technical-section">
+
+        <h2>Assets</h2>
+
+        <p>
+            Die verwendeten Bilder liegen zentral im Ordner
+            <code>assets/images/</code>. Für die produktiv verwendeten
+            Bilder wird WebP eingesetzt.
+        </p>
+
+        <div class="asset-list">
+
+            <article class="asset">
+                <h3>hero.webp</h3>
+                <p>
+                    Hintergrundbild des Hero-Bereichs.
+                </p>
+            </article>
+
+            <article class="asset">
+                <h3>studio.webp</h3>
+                <p>
+                    Hintergrundbild des Leistungsbereichs.
+                </p>
+            </article>
+
+            <article class="asset">
+                <h3>kiezfit-preview.webp</h3>
+                <p>
+                    Projektvorschau für die Dokumentation beziehungsweise
+                    Präsentation des Projekts.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="technical-section">
+
+        <h2>Accessibility</h2>
+
+        <div class="architecture-grid">
+
+            <article class="architecture-card">
+                <h3>Semantik</h3>
+                <p>
+                    Semantische HTML5-Elemente unterstützen eine
+                    nachvollziehbare Dokumentstruktur.
+                </p>
+            </article>
+
+            <article class="architecture-card">
+                <h3>ARIA</h3>
+                <p>
+                    Das mobile Menü verwendet
+                    <code>aria-expanded</code> und
+                    <code>aria-controls</code>, um den Zustand der
+                    Navigation technisch nachvollziehbar zu machen.
+                </p>
+            </article>
+
+            <article class="architecture-card">
+                <h3>Focus States</h3>
+                <p>
+                    Interaktive Elemente besitzen sichtbare
+                    Focus-Zustände für die Tastaturbedienung.
+                </p>
+            </article>
+
+            <article class="architecture-card">
+                <h3>Kontrast</h3>
+                <p>
+                    Die Farbpalette wurde mit dem Ziel einer klaren
+                    visuellen Hierarchie und guter Lesbarkeit aufgebaut.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="technical-section">
+
+        <h2>Deployment</h2>
+
+        <p>
+            Das Projekt wird über GitHub Pages veröffentlicht. Der
+            aktuelle Stand wird aus dem Git-Repository bereitgestellt.
+            Dadurch steht neben der lokalen Entwicklung eine öffentlich
+            erreichbare Live-Demo zur Verfügung.
+        </p>
+
+        <div class="note">
+
+            <h3>Version 0.1.0</h3>
+
+            <p>
+                Die erste Version konzentriert sich auf eine statische
+                Frontend-Grundlage. Backend, Datenbank, echte
+                Benutzerkonten und serverseitige Funktionen gehören
+                ausdrücklich zu späteren Entwicklungsphasen.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    KIEZFIT · Projektdokumentation · Technical
+</footer>
+```
+
+</body>
+
+</html>

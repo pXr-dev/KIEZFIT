@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>KIEZFIT – Progress</title>
+
+<style>
+    :root {
+        --color-carbon: #1A1A1A;
+        --color-off-white: #F4F5F7;
+        --color-lime: #E2F100;
+        --color-graphite: #2D2D2D;
+        --color-white: #F8F9FA;
+        --color-border: #3A3A3A;
+
+        --content-width: 1000px;
+
+        --space-sm: 10px;
+        --space-md: 15px;
+        --space-lg: 20px;
+        --space-xl: 30px;
+        --space-2xl: 40px;
+        --space-3xl: 50px;
+        --space-4xl: 60px;
+        --space-5xl: 80px;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+
+        background-color: var(--color-carbon);
+        color: var(--color-off-white);
+    }
+
+    a {
+        color: var(--color-lime);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    header {
+        padding: var(--space-lg) var(--space-2xl);
+
+        border-bottom: 1px solid var(--color-graphite);
+    }
+
+    .header-content {
+        max-width: var(--content-width);
+        margin: 0 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: var(--space-xl);
+    }
+
+    .logo {
+        color: var(--color-lime);
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-lg);
+    }
+
+    nav a {
+        color: var(--color-off-white);
+        font-size: 0.9rem;
+    }
+
+    nav a:hover {
+        color: var(--color-lime);
+    }
+
+    main {
+        max-width: var(--content-width);
+        margin: 0 auto;
+        padding: var(--space-5xl) var(--space-2xl);
+    }
+
+    .page-header {
+        margin-bottom: var(--space-4xl);
+    }
+
+    .page-label {
+        margin: 0 0 var(--space-md);
+
+        color: var(--color-lime);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+
+    h1 {
+        margin: 0 0 var(--space-lg);
+
+        color: var(--color-white);
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        line-height: 1.1;
+    }
+
+    .intro {
+        max-width: 750px;
+        margin: 0;
+
+        font-size: 1.1rem;
+    }
+
+    .release-status {
+        margin-bottom: var(--space-4xl);
+        padding: var(--space-2xl);
+
+        background-color: var(--color-graphite);
+        border: 1px solid var(--color-lime);
+        border-radius: 12px;
+    }
+
+    .release-status h2 {
+        margin: 0 0 var(--space-sm);
+
+        color: var(--color-white);
+        font-size: 1.6rem;
+    }
+
+    .release-status p {
+        margin: 0;
+    }
+
+    .status-label {
+        display: inline-block;
+
+        margin-bottom: var(--space-lg);
+        padding: 5px 12px;
+
+        background-color: var(--color-lime);
+        color: var(--color-carbon);
+
+        border-radius: 999px;
+
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
+
+    .section-title {
+        margin: 0 0 var(--space-xl);
+
+        color: var(--color-white);
+        font-size: 1.8rem;
+    }
+
+    .progress-list {
+        display: grid;
+        gap: var(--space-md);
+    }
+
+    .progress-item {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+
+        gap: var(--space-xl);
+
+        padding: var(--space-lg) var(--space-xl);
+
+        background-color: var(--color-graphite);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+    }
+
+    .progress-item h3 {
+        margin: 0 0 4px;
+
+        color: var(--color-white);
+        font-size: 1.1rem;
+    }
+
+    .progress-item p {
+        margin: 0;
+
+        color: #C8CDD1;
+        font-size: 0.9rem;
+    }
+
+    .complete {
+        color: var(--color-lime);
+        font-size: 0.85rem;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .in-progress {
+        color: var(--color-off-white);
+        font-size: 0.85rem;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .milestones {
+        margin-top: var(--space-5xl);
+    }
+
+    .milestone-list {
+        display: grid;
+        gap: var(--space-md);
+    }
+
+    .milestone {
+        padding: var(--space-xl);
+
+        background-color: var(--color-graphite);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+    }
+
+    .milestone h3 {
+        margin: 0 0 var(--space-sm);
+
+        color: var(--color-white);
+        font-size: 1.15rem;
+    }
+
+    .milestone p {
+        margin: 0;
+    }
+
+    .milestone.complete-milestone {
+        border-left: 3px solid var(--color-lime);
+    }
+
+    .milestone.current-milestone {
+        border-left: 3px solid var(--color-off-white);
+    }
+
+    .open-points {
+        margin-top: var(--space-5xl);
+        padding: var(--space-2xl);
+
+        background-color: var(--color-graphite);
+        border: 1px solid var(--color-border);
+        border-radius: 12px;
+    }
+
+    .open-points h2 {
+        margin-top: 0;
+
+        color: var(--color-white);
+    }
+
+    .open-points ul {
+        margin-bottom: 0;
+    }
+
+    .open-points li {
+        margin-bottom: var(--space-sm);
+    }
+
+    .open-points li:last-child {
+        margin-bottom: 0;
+    }
+
+    footer {
+        padding: var(--space-2xl);
+
+        border-top: 1px solid var(--color-graphite);
+
+        text-align: center;
+
+        color: #AEB3B7;
+        font-size: 0.85rem;
+    }
+
+    @media (max-width: 700px) {
+        header {
+            padding: var(--space-lg) var(--space-md);
+        }
+
+        .header-content {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        nav {
+            gap: var(--space-md);
+        }
+
+        main {
+            padding: var(--space-4xl) var(--space-lg);
+        }
+
+        .progress-item {
+            grid-template-columns: 1fr;
+            gap: var(--space-sm);
+        }
+    }
+
+    @media (max-width: 450px) {
+        main {
+            padding: var(--space-3xl) var(--space-md);
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<header>
+    <div class="header-content">
+
+        <a class="logo" href="../index.html">
+            KIEZFIT
+        </a>
+
+        <nav aria-label="Dokumentationsnavigation">
+            <a href="roadmap.html">Roadmap</a>
+            <a href="progress.html">Progress</a>
+            <a href="design.html">Design</a>
+            <a href="technical.html">Technical</a>
+            <a href="decisions.html">Decisions</a>
+            <a href="issues.html">Issues</a>
+            <a href="milestones.html">Milestones</a>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+
+    <section class="page-header">
+
+        <p class="page-label">KIEZFIT · Entwicklungsstand</p>
+
+        <h1>Progress</h1>
+
+        <p class="intro">
+            Diese Seite beschreibt den aktuellen Entwicklungsstand von KIEZFIT
+            zum Abschluss der Version 0.1.0. Im Mittelpunkt steht die erste
+            stabile Grundlage der öffentlichen Website sowie die bisher
+            abgeschlossenen Entwicklungs- und Qualitätssicherungsarbeiten.
+        </p>
+
+    </section>
+
+    <section class="release-status">
+
+        <span class="status-label">VERSION 0.1.0</span>
+
+        <h2>Erste stabile Projektgrundlage</h2>
+
+        <p>
+            Die Version 0.1.0 bildet die erste vollständige Grundlage der
+            KIEZFIT-Website. Die Landingpage, responsive Layouts,
+            Interaktionen, Accessibility-Maßnahmen und die technische
+            Projektstruktur wurden umgesetzt und geprüft.
+        </p>
+
+    </section>
+
+    <section>
+
+        <h2 class="section-title">Projektstatus</h2>
+
+        <div class="progress-list">
+
+            <article class="progress-item">
+                <div>
+                    <h3>Landingpage</h3>
+                    <p>Strukturierte Startseite mit Hero, Studio, Leistungen, Kursen, Mitgliedschaften und Kontakt.</p>
+                </div>
+                <span class="complete">ABGESCHLOSSEN</span>
+            </article>
+
+            <article class="progress-item">
+                <div>
+                    <h3>Responsive Design</h3>
+                    <p>Darstellung für Desktop, Tablet und verschiedene mobile Bildschirmgrößen.</p>
+                </div>
+                <span class="complete">ABGESCHLOSSEN</span>
+            </article>
+
+            <article class="progress-item">
+                <div>
+                    <h3>Navigation</h3>
+                    <p>Desktop-Navigation sowie mobiles Hamburger-Menü mit Zustandsverwaltung.</p>
+                </div>
+                <span class="complete">ABGESCHLOSSEN</span>
+            </article>
+
+            <article class="progress-item">
+                <div>
+                    <h3>Interaktionen</h3>
+                    <p>Smooth Scrolling, Scroll-Navigation und animiertes mobiles Menü.</p>
+                </div>
+                <span class="complete">ABGESCHLOSSEN</span>
+            </article>
+
+            <article class="progress-item">
+                <div>
+                    <h3>Accessibility</h3>
+                    <p>ARIA-Zustände, Fokusdarstellung und semantische Navigation wurden berücksichtigt.</p>
+                </div>
+                <span class="complete">ABGESCHLOSSEN</span>
+            </article>
+
+            <article class="progress-item">
+                <div>
+                    <h3>Asset-Optimierung</h3>
+                    <p>Verwendete Bild-Assets wurden auf WebP optimiert und die Dateigrößen deutlich reduziert.</p>
+                </div>
+                <span class="complete">ABGESCHLOSSEN</span>
+            </article>
+
+            <article class="progress-item">
+                <div>
+                    <h3>Browser- und Funktionstests</h3>
+                    <p>Zentrale Navigation, Scroll-Funktionen und mobile Menüinteraktionen wurden geprüft.</p>
+                </div>
+                <span class="complete">ABGESCHLOSSEN</span>
+            </article>
+
+            <article class="progress-item">
+                <div>
+                    <h3>Projektdokumentation</h3>
+                    <p>Roadmap, Progress, Design, Technical, Decisions, Issues und Milestones werden neu aufgebaut.</p>
+                </div>
+                <span class="in-progress">IN ARBEIT</span>
+            </article>
+
+            <article class="progress-item">
+                <div>
+                    <h3>Release 0.1.0</h3>
+                    <p>Abschließende Dokumentation, Repository-Prüfung und Release-Vorbereitung.</p>
+                </div>
+                <span class="in-progress">IN ARBEIT</span>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="milestones">
+
+        <h2 class="section-title">Milestone-Status</h2>
+
+        <div class="milestone-list">
+
+            <article class="milestone complete-milestone">
+                <h3>Milestone 01 – Projektgrundlage</h3>
+                <p>
+                    Projektstruktur, HTML-, CSS- und JavaScript-Grundlagen,
+                    Dokumentationsstruktur, Git-Repository und GitHub Pages.
+                </p>
+            </article>
+
+            <article class="milestone complete-milestone">
+                <h3>Milestone 02 – JavaScript &amp; Interaktion</h3>
+                <p>
+                    Scroll-Navigation, mobiles Menü und grundlegende
+                    Benutzerinteraktionen.
+                </p>
+            </article>
+
+            <article class="milestone complete-milestone">
+                <h3>Milestone 03 – Design &amp; UX</h3>
+                <p>
+                    Visuelles Erscheinungsbild, Komponenten, Karten,
+                    Buttons und zentrale Seitenbereiche.
+                </p>
+            </article>
+
+            <article class="milestone complete-milestone">
+                <h3>Milestone 04 – Responsive Design</h3>
+                <p>
+                    Responsive Layouts für Tablet, Mobile und kleine
+                    Bildschirmgrößen.
+                </p>
+            </article>
+
+            <article class="milestone complete-milestone">
+                <h3>Milestone 05 – Quality &amp; Testing</h3>
+                <p>
+                    Browser- und Funktionstests sowie technische
+                    Bereinigung und Asset-Optimierung.
+                </p>
+            </article>
+
+            <article class="milestone current-milestone">
+                <h3>Milestone 06 – Documentation &amp; Release</h3>
+                <p>
+                    Projektdokumentation vervollständigen, README finalisieren,
+                    Live-Demo und Repository prüfen sowie Version 0.1.0
+                    veröffentlichen.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="open-points">
+
+        <h2>Offene Punkte für die nächste Version</h2>
+
+        <p>
+            Die Version 0.1.0 konzentriert sich auf eine stabile Grundlage.
+            Weitere technische und funktionale Verbesserungen werden bewusst
+            in nachfolgenden Versionen behandelt.
+        </p>
+
+        <ul>
+            <li>CSS-Variable <code>--color-card</code> prüfen und korrigieren.</li>
+            <li>Bestehende technische Strukturen weiter optimieren.</li>
+            <li>Vorbereitete Unterseiten schrittweise weiterentwickeln.</li>
+            <li>Weitere Funktionen für zukünftige Versionen planen und umsetzen.</li>
+        </ul>
+
+    </section>
+
+</main>
+
+<footer>
+    KIEZFIT · Projektdokumentation · Progress
+</footer>
+```
+
+</body>
+
+</html>

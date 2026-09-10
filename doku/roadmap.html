@@ -1,150 +1,517 @@
-<!-- KIEZFIT -->
-│
-├── ROADMAP
-│      Was muss bis zum Abschluss passieren?
-│
-├── MILESTONES
-│      Größere Entwicklungsabschnitte
-│
-├── ISSUES
-│      Konkrete Aufgaben
-│
-└── COMMITS
-       Was wurde tatsächlich umgesetzt?
+<!DOCTYPE html>
 
-<!-- ROADMAP -->
+<html lang="de">
 
-<!-- PHASE 1 – PROJEKTGRUNDLAGE -->
-STATUS: ✅ ABGESCHLOSSEN
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- PHASE 2 – JAVASCRIPT & INTERAKTION -->
-STATUS: ✅ ABGESCHLOSSEN
+```
+<title>KIEZFIT – Roadmap</title>
 
-<!-- PHASE 3 – VISUELLES DESIGN & UX -->
-STATUS: 🟡 AKTUELL
+<style>
+    :root {
+        --color-carbon: #1A1A1A;
+        --color-off-white: #F4F5F7;
+        --color-lime: #E2F100;
+        --color-graphite: #2D2D2D;
+        --color-white: #F8F9FA;
+        --color-border: #3A3A3A;
 
-<!-- PHASE 4 – MEMBER-BEREICH -->
-STATUS: ⬜ OFFEN
+        --content-width: 1000px;
 
-<!-- PHASE 1 – Projektgrundlage -->
-Ziel: Technische und strukturelle Basis schaffen.
+        --space-sm: 10px;
+        --space-md: 15px;
+        --space-lg: 20px;
+        --space-xl: 30px;
+        --space-2xl: 40px;
+        --space-3xl: 50px;
+        --space-4xl: 60px;
+        --space-5xl: 80px;
+    }
 
-Projektstruktur
-HTML-Grundstruktur
-CSS-Grundsystem
-Assets
-Responsive Grundstruktur
-Git
-GitHub
-erste Dokumentation
+    * {
+        box-sizing: border-box;
+    }
 
-Status: ✅ Abgeschlossen
+    html {
+        scroll-behavior: smooth;
+    }
 
-<!-- PHASE 2 – JavaScript & Interaktion -->
-Ziel: Die statische Website funktional und interaktiv machen.
+    body {
+        margin: 0;
+        padding: 0;
 
-JavaScript aus HTML auslagern
-Scroll-Navigation
-Hamburger-Menü
-Mobile Navigation
-Navigation-Verhalten
-Interaktionen
-Accessibility-Grundlagen
-abschließender Funktionstest
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
 
-Status: ✅ Abgeschlossen
+        background-color: var(--color-carbon);
+        color: var(--color-off-white);
+    }
 
-<!-- PHASE 3 – Visuelles Design & UX -->
-Ziel: Die öffentliche KIEZFIT-Seite visuell finalisieren.
+    a {
+        color: var(--color-lime);
+        text-decoration: none;
+    }
 
-Design-Freeze
-Farb- und Gestaltungssystem
-Typografie
-Abstände
-Section-Aufbau
-Übergänge zwischen Sections
-Hover-Effekte
-Animationen
-responsive Optimierung
-Mobile Feinschliff
-visuelle Konsistenz
-Accessibility-Feinschliff
+    a:hover {
+        text-decoration: underline;
+    }
 
-Status: 🟡 aktuell
+    header {
+        padding: var(--space-lg) var(--space-2xl);
 
-<!-- Phase 4 – Member-Bereich -->
-Login
-Registrierung
-Dashboard
-Profil
-Training
-Trainingspläne
-Kurse
-Fortschritt
-Ernährung
-Nachrichten
-Herausforderungen
-Mitgliedschaft
+        border-bottom: 1px solid var(--color-graphite);
+    }
 
-<!-- Phase 5 – Funktionalität -->
-Navigation
-Formulare
-Formularvalidierung
-Datenstrukturen
-Benutzerinteraktionen
-Zustände
-dynamische Inhalte
-Fehlerbehandlung im Frontend
-Wiederverwendbare Komponenten
-API-Anbindung vorbereiten
+    .header-content {
+        max-width: var(--content-width);
+        margin: 0 auto;
 
-<!-- Phase 6 – Backend -->
-Backend
-API
-Datenbank
-Datenmodell
-Authentifizierung
-Benutzerverwaltung
-Sessions / Auth-State
-Kursdaten
-Trainingsdaten
-Mitgliedschaften
-Nachrichten
-Fortschrittsdaten
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-<!-- Phase 7 – Testing & Security -->
-Funktionstests
-Responsive Testing
-Browser Testing
-Accessibility
-Formularvalidierung
-Fehlerbehandlung
-Security
-Authentifizierung testen
-API testen
-Datenbank testen
-Performance
-Codequalität
+        gap: var(--space-xl);
+    }
 
-<!-- Phase 8 – Deployment -->
-Server
-Domain
-HTTPS
-Deployment
-Produktionsumgebung
-Environment-Konfiguration
-finale Performance-Optimierung
-finale Responsive-Optimierung
-Monitoring / Logging
+    .logo {
+        color: var(--color-lime);
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
 
-<!-- Phase 9 – Abschluss -->
-Code Cleanup
-finale Dokumentation
-Projektstruktur prüfen
-offene Issues schließen
-finaler Funktionstest
-Security-Check
-Deployment prüfen
-Release vorbereiten
-Version 1.0.0
-Abschlussdokumentation
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-lg);
+    }
+
+    nav a {
+        color: var(--color-off-white);
+        font-size: 0.9rem;
+    }
+
+    nav a:hover {
+        color: var(--color-lime);
+    }
+
+    main {
+        max-width: var(--content-width);
+        margin: 0 auto;
+        padding: var(--space-5xl) var(--space-2xl);
+    }
+
+    .page-header {
+        margin-bottom: var(--space-5xl);
+    }
+
+    .page-label {
+        margin: 0 0 var(--space-md);
+
+        color: var(--color-lime);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+
+    h1 {
+        margin: 0 0 var(--space-lg);
+
+        color: var(--color-white);
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        line-height: 1.1;
+    }
+
+    .intro {
+        max-width: 750px;
+        margin: 0;
+
+        color: var(--color-off-white);
+        font-size: 1.1rem;
+    }
+
+    .roadmap {
+        display: grid;
+        gap: var(--space-xl);
+    }
+
+    .roadmap-item {
+        position: relative;
+
+        padding: var(--space-2xl);
+
+        background-color: var(--color-graphite);
+        border: 1px solid var(--color-border);
+        border-radius: 12px;
+
+        transition:
+            border-color 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .roadmap-item:hover {
+        border-color: var(--color-lime);
+        transform: translateY(-2px);
+    }
+
+    .version {
+        display: inline-block;
+
+        margin-bottom: var(--space-md);
+        padding: 5px 12px;
+
+        background-color: var(--color-lime);
+        color: var(--color-carbon);
+
+        border-radius: 999px;
+
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
+
+    .roadmap-item h2 {
+        margin: 0 0 var(--space-sm);
+
+        color: var(--color-white);
+        font-size: 1.6rem;
+    }
+
+    .roadmap-item > p {
+        margin: 0 0 var(--space-lg);
+
+        color: var(--color-off-white);
+    }
+
+    .roadmap-item ul {
+        margin: 0;
+        padding-left: 20px;
+    }
+
+    .roadmap-item li {
+        margin-bottom: var(--space-sm);
+    }
+
+    .roadmap-item li:last-child {
+        margin-bottom: 0;
+    }
+
+    .status {
+        margin-top: var(--space-xl);
+        padding-top: var(--space-lg);
+
+        border-top: 1px solid var(--color-border);
+
+        color: #C8CDD1;
+        font-size: 0.9rem;
+    }
+
+    .status strong {
+        color: var(--color-lime);
+    }
+
+    .principles {
+        margin-top: var(--space-5xl);
+        padding: var(--space-2xl);
+
+        border-left: 3px solid var(--color-lime);
+        background-color: var(--color-graphite);
+    }
+
+    .principles h2 {
+        margin-top: 0;
+        color: var(--color-white);
+    }
+
+    .principles p {
+        margin-bottom: 0;
+    }
+
+    footer {
+        padding: var(--space-2xl);
+
+        border-top: 1px solid var(--color-graphite);
+
+        text-align: center;
+
+        color: #AEB3B7;
+        font-size: 0.85rem;
+    }
+
+    @media (max-width: 700px) {
+        header {
+            padding: var(--space-lg) var(--space-md);
+        }
+
+        .header-content {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        nav {
+            gap: var(--space-md);
+        }
+
+        main {
+            padding: var(--space-4xl) var(--space-lg);
+        }
+
+        .page-header {
+            margin-bottom: var(--space-4xl);
+        }
+
+        .roadmap-item {
+            padding: var(--space-xl);
+        }
+    }
+
+    @media (max-width: 450px) {
+        main {
+            padding: var(--space-3xl) var(--space-md);
+        }
+
+        .roadmap-item {
+            padding: var(--space-lg);
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<header>
+    <div class="header-content">
+
+        <a class="logo" href="../index.html">
+            KIEZFIT
+        </a>
+
+        <nav aria-label="Dokumentationsnavigation">
+            <a href="roadmap.html">Roadmap</a>
+            <a href="progress.html">Progress</a>
+            <a href="design.html">Design</a>
+            <a href="technical.html">Technical</a>
+            <a href="decisions.html">Decisions</a>
+            <a href="issues.html">Issues</a>
+            <a href="milestones.html">Milestones</a>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+
+    <section class="page-header">
+
+        <p class="page-label">KIEZFIT · Entwicklung</p>
+
+        <h1>Roadmap</h1>
+
+        <p class="intro">
+            Die Roadmap beschreibt die geplante Entwicklungsrichtung von KIEZFIT.
+            Sie zeigt, wie sich das aktuelle statische Fitnessstudio-Projekt
+            schrittweise zu einer umfangreicheren digitalen Plattform entwickeln
+            kann. Die aufgeführten Versionen stellen Entwicklungsphasen dar und
+            sind keine unveränderlichen Feature-Zusagen.
+        </p>
+
+    </section>
+
+    <section class="roadmap" aria-label="KIEZFIT Entwicklungsphasen">
+
+        <article class="roadmap-item">
+
+            <span class="version">0.1.x</span>
+
+            <h2>Stabilisierung &amp; Weiterentwicklung</h2>
+
+            <p>
+                Nach dem ersten Release steht die technische und visuelle
+                Stabilisierung des bestehenden Projekts im Vordergrund.
+            </p>
+
+            <ul>
+                <li>kleinere technische Fehler und Inkonsistenzen beheben</li>
+                <li>bestehende CSS- und JavaScript-Strukturen weiter verbessern</li>
+                <li>Responsive Verhalten weiter prüfen</li>
+                <li>Accessibility und Bedienbarkeit weiter optimieren</li>
+                <li>bestehende Komponenten konsolidieren</li>
+                <li>offene Punkte aus dem 0.1.0-Release bearbeiten</li>
+            </ul>
+
+            <div class="status">
+                <strong>Status:</strong>
+                nächste Entwicklungsphase
+            </div>
+
+        </article>
+
+        <article class="roadmap-item">
+
+            <span class="version">0.2.x</span>
+
+            <h2>Website-Ausbau</h2>
+
+            <p>
+                Die bisherige Landingpage soll schrittweise um zusätzliche
+                Inhalte und eigenständige Seiten erweitert werden.
+            </p>
+
+            <ul>
+                <li>bestehende Unterseiten weiterentwickeln</li>
+                <li>Kursangebote ausführlicher darstellen</li>
+                <li>Mitgliedschaften und Leistungen erweitern</li>
+                <li>Studio- und Kontaktinformationen ausbauen</li>
+                <li>Navigation und Seitenstruktur weiterentwickeln</li>
+                <li>gemeinsame Komponenten und Layouts vereinheitlichen</li>
+            </ul>
+
+            <div class="status">
+                <strong>Status:</strong>
+                geplante Entwicklungsrichtung
+            </div>
+
+        </article>
+
+        <article class="roadmap-item">
+
+            <span class="version">0.3.x</span>
+
+            <h2>Interaktive Funktionen</h2>
+
+            <p>
+                KIEZFIT soll von einer überwiegend statischen Website zu einer
+                interaktiveren Anwendung weiterentwickelt werden.
+            </p>
+
+            <ul>
+                <li>interaktive Kursdarstellung</li>
+                <li>Formulare und Benutzereingaben</li>
+                <li>interaktive Fortschrittsdarstellungen</li>
+                <li>erweiterte JavaScript-Funktionen</li>
+                <li>clientseitige Datenverarbeitung</li>
+                <li>Grundlagen für einen späteren Mitgliederbereich schaffen</li>
+            </ul>
+
+            <div class="status">
+                <strong>Status:</strong>
+                langfristige Entwicklungsrichtung
+            </div>
+
+        </article>
+
+        <article class="roadmap-item">
+
+            <span class="version">0.4.x</span>
+
+            <h2>Mitgliederbereich</h2>
+
+            <p>
+                Der vorbereitete Mitgliederbereich soll zu einem nutzbaren
+                Bereich für registrierte Studio-Mitglieder ausgebaut werden.
+            </p>
+
+            <ul>
+                <li>Registrierung und Login</li>
+                <li>persönliches Profil</li>
+                <li>individuelle Trainingspläne</li>
+                <li>Fortschrittsübersicht</li>
+                <li>persönliche Kursverwaltung</li>
+                <li>Nachrichten und Benachrichtigungen</li>
+            </ul>
+
+            <div class="status">
+                <strong>Status:</strong>
+                langfristige Entwicklungsrichtung
+            </div>
+
+        </article>
+
+        <article class="roadmap-item">
+
+            <span class="version">0.5.x</span>
+
+            <h2>Backend &amp; Daten</h2>
+
+            <p>
+                Für echte Benutzerkonten und personalisierte Funktionen wäre
+                eine serverseitige Architektur mit persistenter Datenhaltung
+                erforderlich.
+            </p>
+
+            <ul>
+                <li>Backend-Architektur entwickeln</li>
+                <li>Datenbankanbindung</li>
+                <li>Benutzer- und Kontoverwaltung</li>
+                <li>API-Strukturen</li>
+                <li>serverseitige Validierung</li>
+                <li>Sicherheits- und Datenschutzkonzept</li>
+            </ul>
+
+            <div class="status">
+                <strong>Status:</strong>
+                langfristige Entwicklungsrichtung
+            </div>
+
+        </article>
+
+        <article class="roadmap-item">
+
+            <span class="version">1.0.0</span>
+
+            <h2>Vollständige KIEZFIT-Plattform</h2>
+
+            <p>
+                Die Version 1.0.0 steht langfristig für eine stabile,
+                funktionsfähige und ganzheitliche KIEZFIT-Plattform.
+            </p>
+
+            <ul>
+                <li>stabile öffentliche Website</li>
+                <li>vollwertiger Mitgliederbereich</li>
+                <li>Benutzerkonten und personalisierte Inhalte</li>
+                <li>Kurs- und Trainingsverwaltung</li>
+                <li>Fortschritts- und Trainingsfunktionen</li>
+                <li>Backend und Datenhaltung</li>
+                <li>verlässliche Responsive- und Accessibility-Unterstützung</li>
+                <li>produktiver und langfristig wartbarer Gesamtaufbau</li>
+            </ul>
+
+            <div class="status">
+                <strong>Status:</strong>
+                langfristiges Ziel
+            </div>
+
+        </article>
+
+    </section>
+
+    <section class="principles">
+
+        <h2>Entwicklungsprinzipien</h2>
+
+        <p>
+            KIEZFIT wird schrittweise entwickelt. Neue Funktionen sollen erst
+            dann in eine höhere Entwicklungsphase übernommen werden, wenn die
+            bestehende Grundlage stabil und nachvollziehbar aufgebaut ist.
+            Dabei stehen Wartbarkeit, verständliche Strukturen, Responsive
+            Design, Accessibility und eine saubere technische Weiterentwicklung
+            im Vordergrund.
+        </p>
+
+    </section>
+
+</main>
+
+<footer>
+    KIEZFIT · Projektdokumentation · Roadmap
+</footer>
+```
+
+</body>
+
+</html>
