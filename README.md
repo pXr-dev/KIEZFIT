@@ -6,95 +6,159 @@
 
 [🌐 Live Demo](https://pxr-dev.github.io/KIEZFIT/)
 
+## Projektbeschreibung
+
 KIEZFIT ist ein praxisorientiertes Webentwicklungsprojekt zur Konzeption und Umsetzung einer modernen Fitnessstudio-Website.
 
-Im Mittelpunkt stehen eine klare Benutzerführung, responsives Webdesign,
-eine strukturierte HTML-/CSS-/JavaScript-Architektur sowie die
-schrittweise Entwicklung interaktiver Funktionen.
+Im Mittelpunkt stehen eine klare Benutzerführung, responsives Webdesign, eine strukturierte HTML-/CSS-/JavaScript-Architektur sowie die schrittweise Entwicklung und Optimierung interaktiver Funktionen.
 
-<u>**Projekt:**</u></br>
-Die Website stellt ein fiktives Fitnessstudio digital vor und **umfasst** unter anderem:
+Die Website stellt ein fiktives Fitnessstudio digital vor und umfasst unter anderem:
+
 * Studio
 * Leistungen
 * Kurse
 * Mitgliedschaften
 * Kontakt
-* Login-Bereich
+* vorbereiteten Login-Bereich
 
+Das Projekt wurde von Grund auf entwickelt und im Verlauf kontinuierlich hinsichtlich Struktur, Responsivität, Benutzerführung und Interaktion optimiert.
 
-Das Projekt wurde von Grund auf entwickelt und im Verlauf kontinuierlich **optimiert**:</br>
+## Features
 
-* Struktur
-* Responsivität
-* Benutzerführung und
-* Interaktion.
-
-<u>**Features:**</u></br>
 * Responsive Layout für Desktop, Tablet und Mobile
 * Responsive Navigation
 * Mobile Hamburger-Navigation
-* Smooth-Scroll-Funktion
-* Interaktiver Scroll-Button
+* Smooth Scrolling
+* Interaktive Scroll-Navigation
 * Strukturierte Leistungs- und Informationsbereiche
 * Responsive Kartenlayouts
+* Accessibility-Grundlagen, unter anderem ARIA-Attribute
 * Separierte HTML-, CSS- und JavaScript-Dateien
+* Modulare CSS-Struktur
 * Organisierte Asset- und Seitenstruktur
+* Optimierte WebP-Bilddateien
 
-<u>**Technologien:**</u></br>
-* HTML5
-* CSS3
-* JavaScript
-* Git
-* GitHub
+## Technologien
 
-<u>**Projektstruktur**</u></br>
-* KIEZFIT/
-* ├── assets/
-* │   └── images/
-* ├── css/
-* ├── doku/
-* ├── js/
-* ├── pages/
-* ├── index.html
-* ├── login.html
-* └── README.md
+* **HTML5** – semantische Seitenstruktur
+* **CSS3** – Layout, Design und Responsive Design
+* **JavaScript** – Navigation und Interaktionen
+* **Git** – Versionsverwaltung
+* **GitHub** – Repository, Versionshistorie und Projektverwaltung
+* **GitHub Pages** – Deployment der Live-Demo
 
-<u>**Struktur:**</u></br>
-* assets/ = Enthält verwendete Medien und Bilddateien.
+## Projektstruktur
 
-* css/ = Enthält die Stylesheets und das responsive Design.
+```text
+KIEZFIT/
+├── assets/
+│   ├── icons/
+│   └── images/
+│       ├── hero.webp
+│       ├── kiezfit-preview.webp
+│       └── studio.webp
+├── css/
+│   ├── base.css
+│   ├── components.css
+│   ├── layout.css
+│   ├── responsive.css
+│   └── sections.css
+├── doku/
+│   ├── decisions.html
+│   ├── design.html
+│   ├── issues.html
+│   ├── milestones.html
+│   ├── progress.html
+│   ├── roadmap.html
+│   └── technical.html
+├── js/
+│   └── script.js
+├── pages/
+│   ├── challenges.html
+│   ├── dashboard.html
+│   ├── ernaehrung.html
+│   ├── fortschritt.html
+│   ├── kurse.html
+│   ├── mitgliedschaft.html
+│   ├── nachrichten.html
+│   ├── profil.html
+│   ├── register.html
+│   ├── studio.html
+│   ├── training.html
+│   └── trainingsplaene.html
+├── .gitignore
+├── CHANGELOG.md
+├── index.html
+├── login.html
+└── README.md
+```
 
-* js/ = Enthält die ausgelagerte JavaScript-Logik und Interaktionen.
+### Struktur
 
-* pages/ = Enthält weitere HTML-Seiten des Projekts.
+* `assets/` – verwendete Medien und Bilddateien
+* `css/` – modular aufgebaute Stylesheets für Basis, Layout, Komponenten, Bereiche und Responsive Design
+* `js/` – ausgelagerte JavaScript-Logik und Interaktionen
+* `pages/` – vorbereitete weitere Seiten des Projekts
+* `doku/` – Projektdokumentation, technische Entscheidungen, Fortschritt und Entwicklungsplanung
+* `CHANGELOG.md` – versionsbezogene Änderungen und Releases
+* `index.html` – zentrale Landingpage
+* `login.html` – vorbereiteter Login-Bereich
+* `README.md` – Projektübersicht
 
-* doku/ = Enthält die Projektdokumentation und Informationen zum Entwicklungsprozess.
+## Entwicklungsprozess
 
-<u>**Entwicklungsprozess:**</u></br>
-KIEZFIT wird schrittweise entwickelt und über GitHub dokumentiert.
+KIEZFIT wird schrittweise entwickelt und über GitHub versioniert und dokumentiert.
 
-Der Entwicklungsprozess <u>**umfasst**</u> unter anderem:</br>
-1. Planung und grundlegende Seitenstruktur
+Der Entwicklungsprozess umfasst unter anderem:
+
+1. Planung und grundlegende Projektstruktur
 2. Aufbau des HTML-Grundgerüsts
 3. Entwicklung des visuellen Designs
 4. Aufbau der einzelnen Websitebereiche
-5. Responsive Umsetzung
-6. Auslagerung und Strukturierung des JavaScript-Codes
+5. Umsetzung des Responsive Designs
+6. Strukturierung und Auslagerung des JavaScript-Codes
 7. Entwicklung der Navigation und Interaktionen
 8. Optimierung für unterschiedliche Bildschirmgrößen
-9. Dokumentation und kontinuierliche Überarbeitung
+9. Browser- und Funktionstests
+10. Überarbeitung der Projektstruktur und Dokumentation
+11. Vorbereitung des ersten stabilen Releases
 
-<u>**Projektstatus:**</u></br>
-* Das Projekt befindet sich in aktiver Entwicklung.
+Die Entwicklung erfolgt iterativ. Funktionen, Strukturen und Dokumentation werden überprüft und bei Bedarf schrittweise verbessert.
 
-* Neue Funktionen, Optimierungen und strukturelle Verbesserungen werden
-schrittweise umgesetzt und dokumentiert.
+## Dokumentation
 
-<u>**Dokumentation:**</u></br>
-Eine ausführlichere Dokumentation des Entwicklungsprozesses befindet
-sich im Verzeichnis doku/.
+Die ausführliche Projektdokumentation befindet sich im Verzeichnis [`doku/`](doku/).
 
-<u>**Ziel des Projekts**</u></br>
-KIEZFIT dient als praxisorientiertes Entwicklungsprojekt, um Kenntnisse in
-der Frontend-Entwicklung zu vertiefen und den strukturierten
-Entwicklungsprozess eines Webprojekts nachvollziehbar zu dokumentieren.
+Dort werden unter anderem folgende Bereiche dokumentiert:
+
+* [Roadmap](doku/roadmap.html)
+* [Projektfortschritt](doku/progress.html)
+* [Design](doku/design.html)
+* [Technische Struktur](doku/technical.html)
+* [Technische Entscheidungen](doku/decisions.html)
+* [Issues](doku/issues.html)
+* [Milestones](doku/milestones.html)
+
+Zusätzlich dokumentiert [`CHANGELOG.md`](CHANGELOG.md) die wichtigsten Änderungen auf Versionsebene.
+
+Die vollständige technische Historie des Projekts ist über das GitHub-Repository nachvollziehbar.
+
+## Projektstatus
+
+**Version 0.1.0 – Erste stabile Projektgrundlage**
+
+Die grundlegende Landingpage, das Responsive Design, die Navigation, JavaScript-Interaktionen, Accessibility-Grundlagen, Asset-Optimierung und die Projektdokumentation sind umgesetzt.
+
+Weitere Funktionen und strukturelle Erweiterungen sind für zukünftige Versionen vorgesehen.
+
+## Live Demo
+
+Die aktuelle Version des Projekts ist online verfügbar:
+
+[🌐 KIEZFIT Live Demo](https://pxr-dev.github.io/KIEZFIT/)
+
+## Ziel des Projekts
+
+KIEZFIT dient als praxisorientiertes Entwicklungsprojekt, um Kenntnisse in der Frontend-Entwicklung zu vertiefen und einen strukturierten Entwicklungsprozess nachvollziehbar zu dokumentieren.
+
+Neben der technischen Umsetzung steht dabei auch die kontinuierliche Verbesserung von Code-Struktur, Responsive Design, Benutzerführung, Accessibility, Performance und Projektdokumentation im Mittelpunkt.
