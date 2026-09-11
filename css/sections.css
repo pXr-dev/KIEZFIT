@@ -327,7 +327,7 @@
 }
 
 .studio-area:hover .studio-description {
-    max-height: 70px;
+    max-height: 180px;
 
     margin-top: var(--space-md);
 
